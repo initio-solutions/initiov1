@@ -22,7 +22,7 @@ function Signup() {
             Sign Up
           </h1>
         </div>
-        <div className="p-2 w-1/2">
+        <div className="p-2 w-1/2 mx-auto">
           <div className="relative">
             <label htmlFor="name" className="leading-7 text-sm text-gray-600">
               Name
@@ -37,7 +37,7 @@ function Signup() {
             />
           </div>
         </div>
-        <div className="p-2 w-1/2">
+        <div className="p-2 w-1/2 mx-auto">
           <div className="relative">
             <label htmlFor="name" className="leading-7 text-sm text-gray-600">
               Email
@@ -52,7 +52,7 @@ function Signup() {
             />
           </div>
         </div>
-        <div className="p-2 w-1/2">
+        <div className="p-2 w-1/2 mx-auto">
           <div className="relative">
             <label htmlFor="name" className="leading-7 text-sm text-gray-600">
               Password

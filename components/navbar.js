@@ -11,7 +11,7 @@ function Navbar() {
     } else {
       setSignin(false);
     }
-  }, []);
+  }, [signin]);
   const logout = () => {
     localStorage.removeItem("token");
     Router.push("/");
@@ -52,7 +52,6 @@ function Navbar() {
           <span className="ml-3 text-xl">Initio Solutions</span>
         </Link>
         <div className="lg:w-2/5 inline-flex items-center lg:justify-end ml-5 lg:ml-0">
-          {console.log(signin)}
           {signin ? (
             <button onClick={logout} className="mr-5 hover:text-gray-900">
               Logout

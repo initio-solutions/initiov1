@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Router from "next/router";
+import Link from "next/link";
 function Signin() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -35,7 +36,7 @@ function Signin() {
             Sign in
           </h1>
         </div>
-        <div className="p-2 w-1/2">
+        <div className="p-2 w-1/2 mx-auto">
           <div className="relative">
             <label htmlFor="name" className="leading-7 text-sm text-gray-600">
               Email
@@ -50,7 +51,7 @@ function Signin() {
             />
           </div>
         </div>
-        <div className="p-2 w-1/2">
+        <div className="p-2 w-1/2  mx-auto">
           <div className="relative">
             <label htmlFor="name" className="leading-7 text-sm text-gray-600">
               Password
@@ -73,6 +74,14 @@ function Signin() {
           >
             Sign in
           </button>
+        </div>
+        <div className="p-2 w-1/2 mx-auto text-center">
+          <h2 className="sm:text-lg text-xl text-gray-900">
+            Don't have an account?{" "}
+            <Link className="text-blue-600" href="/signup">
+              Sign Up
+            </Link>
+          </h2>
         </div>
       </div>
     </section>

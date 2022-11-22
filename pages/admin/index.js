@@ -2,11 +2,14 @@ import { useState, useEffect } from "react";
 import Router from "next/router";
 function Admin() {
   useEffect(() => {
-    if (!localStorage.getItem("token")&&localStporage.getItem('email')==='initiosol@gmail.com') {
+    if (
+      !localStorage.getItem("token") &&
+      !localStorage.getItem("email") === "initiosol@gmail.com"
+    ) {
       Router.push("/");
     }
   }, []);
-  return <div>Admin</div>;
+  return <></>;
 }
 
 export default Admin;
