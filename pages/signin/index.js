@@ -77,7 +77,7 @@ function Signin() {
         </div>
         <div className="p-2 w-1/2 mx-auto text-center">
           <h2 className="sm:text-lg text-xl text-gray-900">
-            Don't have an account?{" "}
+            Don&rsquo;t have an account?{" "}
             <Link className="text-blue-600" href="/signup">
               Sign Up
             </Link>
