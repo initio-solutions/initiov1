@@ -1,6 +1,21 @@
 "use client";
 import Link from "next/link";
+import Router from "next/router";
+import { useState, useEffect } from "react";
 function Navbar() {
+  const [signin, setSignin] = useState(false);
+  useEffect(() => {
+    let token = localStorage.getItem("token");
+    if (token) {
+      setSignin(true);
+    } else {
+      setSignin(false);
+    }
+  }, []);
+  const logout = () => {
+    localStorage.removeItem("token");
+    Router.push("/");
+  };
   return (
     <header className="text-gray-600 body-font">
       <div className="container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
@@ -37,20 +52,30 @@ function Navbar() {
           <span className="ml-3 text-xl">Initio Solutions</span>
         </Link>
         <div className="lg:w-2/5 inline-flex items-center lg:justify-end ml-5 lg:ml-0">
-          <button className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0">
-            Sign in
-            <svg
-              fill="none"
-              stroke="currentColor"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              strokeWidth="2"
-              className="w-4 h-4 ml-1"
-              viewBox="0 0 24 24"
+          {console.log(signin)}
+          {signin ? (
+            <button onClick={logout} className="mr-5 hover:text-gray-900">
+              Logout
+            </button>
+          ) : (
+            <button
+              onClick={() => Router.push("/signin")}
+              className="inline-flex items-center bg-gray-100 border-0 py-1 px-3 focus:outline-none hover:bg-gray-200 rounded text-base mt-4 md:mt-0"
             >
-              <path d="M5 12h14M12 5l7 7-7 7"></path>
-            </svg>
-          </button>
+              Sign in
+              <svg
+                fill="none"
+                stroke="currentColor"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                className="w-4 h-4 ml-1"
+                viewBox="0 0 24 24"
+              >
+                <path d="M5 12h14M12 5l7 7-7 7"></path>
+              </svg>
+            </button>
+          )}
 
           <Link href="/contact" className="hover:text-gray-900 ml-2">
             Contact
