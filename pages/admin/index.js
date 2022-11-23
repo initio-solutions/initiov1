@@ -4,7 +4,7 @@ function Admin() {
   useEffect(() => {
     if (
       !localStorage.getItem("token") &&
-      !localStorage.getItem("email") === "initiosol@gmail.com"
+      !localStorage.getItem("email") === process.env.ADMIN_EMAIL
     ) {
       Router.push("/");
     }

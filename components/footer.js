@@ -1,4 +1,4 @@
-import React from "react";
+import Link from "next/link";
 import {
   FaFacebookF,
   FaTwitter,
@@ -17,12 +17,12 @@ function Footer() {
             strokeLinecap="round"
             strokeLinejoin="round"
             strokeWidth="2"
-            className="w-10 h-10 text-white p-2 bg-indigo-500 rounded-full"
+            className="w-10 h-10 text-white p-2 bg-primary rounded-full"
             viewBox="0 0 24 24"
           >
             <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"></path>
           </svg>
-          <span className="ml-3 text-xl">Tailblocks</span>
+          <span className="ml-3 text-xl">Initio Solutions</span>
         </a>
         <p className="text-sm text-gray-500 sm:ml-4 sm:pl-4 sm:border-l-2 sm:border-gray-200 sm:py-2 sm:mt-0 mt-4">
           © 2022 Initio Solutions
@@ -34,12 +34,20 @@ function Footer() {
           <a className="ml-3 text-gray-500">
             <FaTwitter className="text-2xl" />
           </a>
-          <a className="ml-3 text-gray-500">
+          <Link
+            target="_blank"
+            href="https://instagram.com/initiosolutions"
+            className="ml-3 text-gray-500"
+          >
             <FaInstagram className="text-2xl" />
-          </a>
-          <a className="ml-3 text-gray-500">
+          </Link>
+          <Link
+            target="_blank"
+            href="https://linkedin.com/initiosolutions"
+            className="ml-3 text-gray-500"
+          >
             <FaLinkedin className="text-2xl" />
-          </a>
+          </Link>
         </span>
       </div>
     </footer>

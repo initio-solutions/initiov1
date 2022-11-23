@@ -7,6 +7,9 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
+    // colors: {
+    //   main: "#FFDF2B",
+    // },
     // screens: {
     //   tablet: "960px",
     //   desktop: "1248px",

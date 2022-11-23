@@ -5,10 +5,12 @@ import {
   FaInstagram,
   FaLinkedin,
 } from "react-icons/fa";
+import { TiTick } from "react-icons/ti";
 export default function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [sent, setSent] = useState(false);
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -23,7 +25,17 @@ export default function Contact() {
           email,
           message,
         }),
-      });
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          console.log(data);
+          if (data.success === true) {
+            setSent(true);
+            setName("");
+            setEmail("");
+            setMessage("");
+          }
+        });
     } catch (e) {
       console.error(e);
     }
@@ -34,8 +46,7 @@ export default function Contact() {
         <div className="flex flex-col text-center w-full mb-12">
           <h1 className="mb-4 text-gray-900">Contact Us</h1>
           <p className="lg:w-2/3 mx-auto leading-relaxed text-base">
-            Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical
-            gentrify.
+            We will get back in touch ASAP
           </p>
         </div>
         <div className="lg:w-1/2 md:w-2/3 mx-auto">
@@ -97,13 +108,23 @@ export default function Contact() {
               <button
                 type="submit"
                 onClick={handleSubmit}
-                className="flex mx-auto text-white bg-indigo-500 border-0 py-2 px-8 focus:outline-none hover:bg-indigo-600 rounded text-lg"
+                className="flex mx-auto text-white bg-primary border-0 py-2 px-8 focus:outline-none hover:bg-yellow-400 rounded text-lg"
               >
                 Submit
               </button>
             </div>
+            {sent && (
+              <div className="bg-green-200 border-green-500 border p-2 rounded flex text-center mx-auto">
+                <TiTick className=" text-2xl rounded mr-2" />
+                <p className="text-base">
+                  Your Response has been sent successfully!
+                </p>
+              </div>
+            )}
             <div className="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
-              <a className="text-indigo-500">support@initiosolutions.com</a>
+              <a href="mailto: support@initiosolutions.com" className="primary">
+                support@initiosolutions.com
+              </a>
               <p className="leading-normal my-5">
                 Liverpool
                 <br />
