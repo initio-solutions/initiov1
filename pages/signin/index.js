@@ -21,7 +21,7 @@ function Signin() {
     if (response.token) {
       localStorage.setItem("token", response.token);
       localStorage.setItem("email", email);
-      if (email === "initiosol@gmail.com") {
+      if (email === process.env.ADMIN_EMAIL) {
         Router.push("/admin");
       } else {
         Router.push("/dashboard");
