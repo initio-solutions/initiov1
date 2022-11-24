@@ -58,6 +58,9 @@ p {
 .primary {
   color: #ffdf2b;
 }
+.logo {
+  font-family: "M PLUS Code Latin", sans-serif;
+}
 /*
 @media (prefers-color-scheme: dark) {
   html {

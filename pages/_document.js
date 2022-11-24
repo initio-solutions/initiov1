@@ -20,6 +20,14 @@ class MyDocument extends Document {
           <link
             href="https://fonts.googleapis.com/css2?family=Inter+Tight&display=swap"
             rel="stylesheet"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=Edu+QLD+Beginner&display=swap"
+            rel="stylesheet"
+          />
+          <link
+            href="https://fonts.googleapis.com/css2?family=M+PLUS+Code+Latin&display=swap"
+            rel="stylesheet"
           ></link>
         </Head>
         <body>

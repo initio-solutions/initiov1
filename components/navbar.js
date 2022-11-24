@@ -3,6 +3,7 @@ import Link from "next/link";
 import Router from "next/router";
 import { useState, useEffect } from "react";
 import logo from "../assets/logo.png";
+import Logo from "./logo";
 function Navbar() {
   const [signin, setSignin] = useState(false);
   useEffect(() => {
@@ -41,7 +42,8 @@ function Navbar() {
           href="/"
           className="flex order-first lg:order-none lg:w-1/5 items-center text-gray-900 lg:items-center lg:justify-center "
         >
-          <img src={logo.src} width="55%" />
+          <Logo size="15%" />
+          {/* <img src={logo.src} width="55%" /> */}
         </Link>
         <div className="lg:w-2/5 inline-flex items-center lg:justify-end ml-5 lg:ml-0">
           {signin ? (
