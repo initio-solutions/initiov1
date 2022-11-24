@@ -2,7 +2,6 @@
 import Link from "next/link";
 import Router from "next/router";
 import { useState, useEffect } from "react";
-import logo from "../assets/logo.png";
 import Logo from "./logo";
 function Navbar() {
   const [signin, setSignin] = useState(false);
@@ -16,7 +15,9 @@ function Navbar() {
   }, [signin]);
   const logout = () => {
     localStorage.removeItem("token");
+    localStorage.removeItem("email");
     Router.push("/");
+    Router.reload();
   };
   return (
     <header className="text-gray-600 body-font">
@@ -47,9 +48,17 @@ function Navbar() {
         </Link>
         <div className="lg:w-2/5 inline-flex items-center lg:justify-end ml-5 lg:ml-0">
           {signin ? (
-            <button onClick={logout} className="mr-5 hover:text-gray-900">
-              Logout
-            </button>
+            <>
+              <Link href="/dashboard" className="hover:text-gray-900 mr-4">
+                Dashboard
+              </Link>
+              <button
+                onClick={logout}
+                className="mr-4 text-lg hover:text-gray-900"
+              >
+                Logout
+              </button>
+            </>
           ) : (
             <button
               onClick={() => Router.push("/signin")}

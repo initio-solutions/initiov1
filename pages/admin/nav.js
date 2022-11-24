@@ -12,7 +12,7 @@ function Nav({ variable }) {
   }, []);
   return (
     <>
-      <div className="flex justify-left p-2">
+      <div className="flex justify-left p-2 h-screen">
         <nav id="nav" className="w-56 relative">
           {variable === "projects" && (
             <span className="absolute h-10 w-full bg-white rounded-lg shadow ease-out transition-transform transition-medium"></span>

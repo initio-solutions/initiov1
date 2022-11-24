@@ -1,15 +1,20 @@
 import { useState, useEffect } from "react";
 import Router from "next/router";
+import Nav from "./nav";
 function Admin() {
   useEffect(() => {
     if (
-      !localStorage.getItem("token") &&
-      !localStorage.getItem("email") === process.env.ADMIN_EMAIL
+      !localStorage.getItem("token") ||
+      localStorage.getItem("email") !== process.env.ADMIN
     ) {
       Router.push("/");
     }
   }, []);
-  return <></>;
+  return (
+    <>
+      <Nav />
+    </>
+  );
 }
 
 export default Admin;
