@@ -1,16 +1,22 @@
-import hi from '../assets/hi.png'
+import CountUp from 'react-countup';
+import hi from '../assets/hi.png';
+import website from '../assets/website.png';
+import app from '../assets/app.png';
+import seo from '../assets/seo.png';
+import socialmedia from '../assets/socialmedia.png'
+import content from '../assets/content.png';
 export default function page() {
   return (
     <>
       <section className="text-gray-600 body-font">
-        <div style={{backgroundColor:'#3581b8'}} className="container mx-auto flex md:flex-row flex-col px-5 py-12 items-center justify-center">
+        <div style={{backgroundColor:'#3581b8'}} className=" mx-auto flex md:flex-row flex-col px-5 py-12 items-center justify-center">
           <img
             className="lg:w-2/6 md:w-3/6 w-3/6 mb-10 object-cover object-center rounded"
             alt="hero" 
             src={hi.src}
           />
           <div className="text-center text-white lg:w-2/3 w-full">
-            <h1 className="sm:text-4xl  text-3xl mb-4 font-extrabold">
+            <h1 className="sm:text-4xl text-6xl mb-4 font-extrabold">
             The Technology Pioneer.
             </h1>
             <p className="mb-8 leading-relaxed">
@@ -28,6 +34,7 @@ export default function page() {
           </div>
         </div>
       </section>
+
       <hr className="ml-10 mr-10" />
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-12 mx-auto">
@@ -62,6 +69,94 @@ export default function page() {
           </div>
         </div>
       </section>
+      <hr className="ml-10 mr-10" />
+      <section className="text-gray-600 body-font">
+  <div className="container px-5 py-24 mx-auto">
+    <h1 className="mb-3">Services</h1>
+    <div className="flex flex-wrap -m-4">
+      <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
+        <a className="block relative h-48 rounded overflow-hidden">
+          <img alt="ecommerce" className="object-contain object-center w-full h-full block" src={website.src}/>
+        </a>
+        <div className="mt-4">
+          {/* <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3> */}
+          <h2 className="text-gray-900 title-font text-lg font-medium">Web development</h2>
+          <p className="mt-1">$16.00</p>
+        </div>
+      </div>
+      <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
+        <a className="block relative h-48 rounded overflow-hidden">
+          <img alt="ecommerce" className="object-contain object-center w-full h-full block" src={app.src}/>
+        </a>
+        <div className="mt-4">
+          {/* <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3> */}
+          <h2 className="text-gray-900 title-font text-lg font-medium">App development</h2>
+          <p className="mt-1">$21.15</p>
+        </div>
+      </div>
+      <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
+        <a className="block relative h-48 rounded overflow-hidden">
+          <img alt="ecommerce" className="object-contain object-center w-full h-full block" src={seo.src}/>
+        </a>
+        <div className="mt-4">
+          {/* <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3> */}
+          <h2 className="text-gray-900 title-font text-lg font-medium">SEO</h2>
+          <p className="mt-1">$12.00</p>
+        </div>
+      </div>
+      <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
+        <a className="block relative h-48 rounded overflow-hidden">
+          <img alt="ecommerce" className="object-contain object-center w-full h-full block" src={socialmedia.src}/>
+        </a>
+        <div className="mt-4">
+          {/* <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3> */}
+          <h2 className="text-gray-900 title-font text-lg font-medium">Social media marketing</h2>
+          <p className="mt-1">$18.40</p>
+        </div>
+      </div>
+      <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
+        <a className="block relative h-48 rounded overflow-hidden">
+          <img alt="ecommerce" className="object-contain object-center w-full h-full block" src={content.src}/>
+        </a>
+        <div className="mt-4">
+          {/* <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3> */}
+          <h2 className="text-gray-900 title-font text-lg font-medium">Content writing</h2>
+          <p className="mt-1">$16.00</p>
+        </div>
+      </div>
+      <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
+        <a className="block relative h-48 rounded overflow-hidden">
+          <img alt="ecommerce" className="object-cover object-center w-full h-full block" src="https://dummyimage.com/425x265"/>
+        </a>
+        <div className="mt-4">
+          <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+          <h2 className="text-gray-900 title-font text-lg font-medium">Shooting Stars</h2>
+          <p className="mt-1">$21.15</p>
+        </div>
+      </div>
+      <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
+        <a className="block relative h-48 rounded overflow-hidden">
+          <img alt="ecommerce" className="object-cover object-center w-full h-full block" src="https://dummyimage.com/427x267"/>
+        </a>
+        <div className="mt-4">
+          <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+          <h2 className="text-gray-900 title-font text-lg font-medium">Neptune</h2>
+          <p className="mt-1">$12.00</p>
+        </div>
+      </div>
+      <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
+        <a className="block relative h-48 rounded overflow-hidden">
+          <img alt="ecommerce" className="object-cover object-center w-full h-full block" src="https://dummyimage.com/428x268"/>
+        </a>
+        <div className="mt-4">
+          <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
+          <h2 className="text-gray-900 title-font text-lg font-medium">The 400 Blows</h2>
+          <p className="mt-1">$18.40</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
       <hr className="ml-10 mr-10" />
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto">
@@ -134,27 +229,28 @@ export default function page() {
           </div>
         </div>
       </section>
+
       <hr className="ml-10 mr-10" />
-      <section className="text-gray-600 body-font overflow-hidden">
+      <section className="text-white bg-secondary body-font overflow-hidden">
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-col text-center w-full mb-20">
-            <h1 className="sm:text-4xl text-3xl font-medium mb-2 text-gray-900">
+            <h1 className="sm:text-4xl text-3xl font-medium mb-2 text-white">
               Pricing
             </h1>
             <p className="lg:w-2/3 mx-auto leading-relaxed text-gray-500">
               Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical.
             </p>
-            <div className="flex mx-auto border-2 border-indigo-500 rounded overflow-hidden mt-6">
-              <button className="py-1 px-4 bg-indigo-500 text-white focus:outline-none">
+            <div className="flex mx-auto border-2 border-yellow-200 rounded overflow-hidden mt-6">
+              <button className="py-1 px-4 bg-primary text-white focus:outline-none">
                 Monthly
               </button>
               <button className="py-1 px-4 focus:outline-none">Annually</button>
             </div>
           </div>
           <div className="flex flex-wrap -m-4">
-            <div className="p-4 xl:w-1/4 md:w-1/2 w-full">
-              <div className="h-full p-6 rounded-lg border-2 border-gray-300 flex flex-col relative overflow-hidden">
-                <h2 className="text-sm tracking-widest mb-1 font-medium">
+            <div className="p-4 xl:w-1/4 md:w-1/2 w-full ">
+              <div className="h-full p-6 bg-white rounded-lg border-2 border-gray-300 flex flex-col relative overflow-hidden">
+                <h2 className="text-sm text-gray-700 tracking-widest mb-1 font-medium">
                   START
                 </h2>
                 <h1 className="text-5xl text-gray-900 pb-4 mb-4 border-b border-gray-200 leading-none">
@@ -229,11 +325,11 @@ export default function page() {
               </div>
             </div>
             <div className="p-4 xl:w-1/4 md:w-1/2 w-full">
-              <div className="h-full p-6 rounded-lg border-2 border-indigo-500 flex flex-col relative overflow-hidden">
-                <span className="bg-indigo-500 text-white px-3 py-1 tracking-widest text-xs absolute right-0 top-0 rounded-bl">
+              <div className="h-full p-6 rounded-lg border-2 bg-white border-yellow-200 flex flex-col relative overflow-hidden">
+                <span className="bg-primary text-white px-3 py-1 tracking-widest text-xs absolute right-0 top-0 rounded-bl">
                   POPULAR
                 </span>
-                <h2 className="text-sm tracking-widest mb-1 font-medium">
+                <h2 className="text-sm tracking-widest text-gray-700 mb-1 font-medium">
                   PRO
                 </h2>
                 <h1 className="text-5xl text-gray-900 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
@@ -306,7 +402,7 @@ export default function page() {
                   </span>
                   Mixtape chillwave tumeric
                 </p>
-                <button className="flex items-center mt-auto text-white bg-indigo-500 border-0 py-2 px-4 w-full focus:outline-none hover:bg-indigo-600 rounded">
+                <button className="flex items-center mt-auto text-white bg-yellow-200 border-0 py-2 px-4 w-full focus:outline-none hover:bg-indigo-600 rounded">
                   Button
                   <svg
                     fill="none"
@@ -327,8 +423,8 @@ export default function page() {
               </div>
             </div>
             <div className="p-4 xl:w-1/4 md:w-1/2 w-full">
-              <div className="h-full p-6 rounded-lg border-2 border-gray-300 flex flex-col relative overflow-hidden">
-                <h2 className="text-sm tracking-widest mb-1 font-medium">
+              <div className="h-full p-6 rounded-lg border-2 bg-white border-gray-300 flex flex-col relative overflow-hidden">
+                <h2 className="text-sm tracking-widest text-gray-700 mb-1 font-medium">
                   BUSINESS
                 </h2>
                 <h1 className="text-5xl text-gray-900 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
@@ -438,8 +534,8 @@ export default function page() {
               </div>
             </div>
             <div className="p-4 xl:w-1/4 md:w-1/2 w-full">
-              <div className="h-full p-6 rounded-lg border-2 border-gray-300 flex flex-col relative overflow-hidden">
-                <h2 className="text-sm tracking-widest mb-1 font-medium">
+              <div className="h-full p-6 bg-white rounded-lg border-2 border-gray-300 flex flex-col relative overflow-hidden">
+                <h2 className="text-sm text-gray-700 tracking-widest mb-1 font-medium">
                   SPECIAL
                 </h2>
                 <h1 className="text-5xl text-gray-900 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">

@@ -13,9 +13,10 @@
 }
 
 /* Track */
-::-webkit-scrollbar-track {
-  background: #f1f1f1;
-}
+/* ::-webkit-scrollbar-track {
+  /* background: #f1f1f1; 
+} 
+*/
 
 /* Handle */
 ::-webkit-scrollbar-thumb {
@@ -57,6 +58,9 @@ p {
 }
 .primary {
   color: #ffdf2b;
+}
+.bg-secondary{
+  background-color:#fcb07e;
 }
 .logo {
   font-family: "M PLUS Code Latin", sans-serif;
