@@ -1,5 +1,6 @@
 import about1 from "../../assets/about-1.png";
 import about2 from "../../assets/about-2.png";
+x;
 function About() {
   return (
     <>
@@ -25,7 +26,7 @@ function About() {
               content writer, you know how difficult it is to write compelling
               and engaging content. You also know how difficult it is to find
               time to write when you have other responsibilities like managing
-              social media, data analytics, and SEO. That's why we created
+              social media, data analytics, and SEO. That s why we created
               WriteBrain - an AI-powered content writing assistant that helps
               you generate high-quality content in just a few seconds.
             </p>
