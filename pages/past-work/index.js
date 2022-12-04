@@ -5,12 +5,17 @@ function PastWork() {
         <div className="container px-5 py-24 mx-auto flex flex-wrap">
           <div className="flex w-full mb-20 flex-wrap">
             <h1 className="sm:text-3xl text-2xl font-medium title-font text-gray-900 lg:w-1/3 lg:mb-0 mb-4">
-              Galary
+              Gallery
             </h1>
             <p className="lg:pl-6 lg:w-2/3 mx-auto leading-relaxed text-base">
-              Whatever cardigan tote bag tumblr hexagon brooklyn asymmetrical
-              gentrify, subway tile poke farm-to-table. Franzen you probably
-              havent heard of them man bun deep jianbing selfies heirloom.
+              Our Past work has been a major part of the life of every
+              individual. It is what we have done in the past, which has helped
+              us to get to where we are now. Technology has changed the way that
+              people work and live. It has allowed for many new opportunities
+              for people to express themselves and it has also made it possible
+              for people to connect with others from around the world. This
+              section will provide an overview on past work and how technology
+              has impacted this aspect of our lives.
             </p>
           </div>
           <div className="flex flex-wrap md:-m-2 -m-1">

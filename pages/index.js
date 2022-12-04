@@ -1,27 +1,35 @@
-import CountUp from 'react-countup';
-import hi from '../assets/hi.png';
-import website from '../assets/website.png';
-import app from '../assets/app.png';
-import seo from '../assets/seo.png';
-import socialmedia from '../assets/socialmedia.png'
-import content from '../assets/content.png';
+import CountUp from "react-countup";
+import Head from 'next/head';
+import hi from "../assets/hi.png";
+import website from "../assets/website.png";
+import app from "../assets/app.png";
+import seo from "../assets/seo.png";
+import socialmedia from "../assets/socialmedia.png";
+import content from "../assets/content.png";
 export default function page() {
   return (
     <>
+      <Head>
+        <title>Initio Solutions</title>
+      </Head>
       <section className="text-gray-600 body-font">
-        <div style={{backgroundColor:'#3581b8'}} className=" mx-auto flex md:flex-row flex-col px-5 py-12 items-center justify-center">
+        <div
+          style={{ backgroundColor: "#3581b8" }}
+          className=" mx-auto flex md:flex-row flex-col px-5 py-12 items-center justify-center"
+        >
           <img
             className="lg:w-2/6 md:w-3/6 w-3/6 mb-10 object-cover object-center rounded"
-            alt="hero" 
+            alt="hero"
             src={hi.src}
           />
           <div className="text-center text-white lg:w-2/3 w-full">
             <h1 className="sm:text-4xl text-6xl mb-4 font-extrabold">
-            The Technology Pioneer.
+              The Technology Pioneer.
             </h1>
             <p className="mb-8 leading-relaxed">
-            We are specialists in web and app solutions that aim to transform new concepts into a driving force for your company. With us, you can turn any idea into a reality.
-
+              We are specialists in web and app solutions that aim to transform
+              new concepts into a driving force for your company. With us, you
+              can turn any idea into a reality.
             </p>
             <div className="flex justify-center">
               <button className="inline-flex text-white bg-primary border-0 py-2 px-6 focus:outline-none hover:bg-yellow-400 rounded text-lg">
@@ -71,92 +79,146 @@ export default function page() {
       </section>
       <hr className="ml-10 mr-10" />
       <section className="text-gray-600 body-font">
-  <div className="container px-5 py-24 mx-auto">
-    <h1 className="mb-3">Services</h1>
-    <div className="flex flex-wrap -m-4">
-      <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-        <a className="block relative h-48 rounded overflow-hidden">
-          <img alt="ecommerce" className="object-contain object-center w-full h-full block" src={website.src}/>
-        </a>
-        <div className="mt-4">
-          {/* <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3> */}
-          <h2 className="text-gray-900 title-font text-lg font-medium">Web development</h2>
-          <p className="mt-1">$16.00</p>
+        <div className="container px-5 py-24 mx-auto">
+          <h1 className="mb-3">Services</h1>
+          <div className="flex flex-wrap -m-4">
+            <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
+              <a className="block relative h-48 rounded overflow-hidden">
+                <img
+                  alt="ecommerce"
+                  className="object-contain object-center w-full h-full block"
+                  src={website.src}
+                />
+              </a>
+              <div className="mt-4">
+                {/* <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3> */}
+                <h2 className="text-gray-900 title-font text-lg font-medium">
+                  Web development
+                </h2>
+                <p className="mt-1">$16.00</p>
+              </div>
+            </div>
+            <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
+              <a className="block relative h-48 rounded overflow-hidden">
+                <img
+                  alt="ecommerce"
+                  className="object-contain object-center w-full h-full block"
+                  src={app.src}
+                />
+              </a>
+              <div className="mt-4">
+                {/* <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3> */}
+                <h2 className="text-gray-900 title-font text-lg font-medium">
+                  App development
+                </h2>
+                <p className="mt-1">$21.15</p>
+              </div>
+            </div>
+            <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
+              <a className="block relative h-48 rounded overflow-hidden">
+                <img
+                  alt="ecommerce"
+                  className="object-contain object-center w-full h-full block"
+                  src={seo.src}
+                />
+              </a>
+              <div className="mt-4">
+                {/* <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3> */}
+                <h2 className="text-gray-900 title-font text-lg font-medium">
+                  SEO
+                </h2>
+                <p className="mt-1">$12.00</p>
+              </div>
+            </div>
+            <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
+              <a className="block relative h-48 rounded overflow-hidden">
+                <img
+                  alt="ecommerce"
+                  className="object-contain object-center w-full h-full block"
+                  src={socialmedia.src}
+                />
+              </a>
+              <div className="mt-4">
+                {/* <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3> */}
+                <h2 className="text-gray-900 title-font text-lg font-medium">
+                  Social media marketing
+                </h2>
+                <p className="mt-1">$18.40</p>
+              </div>
+            </div>
+            <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
+              <a className="block relative h-48 rounded overflow-hidden">
+                <img
+                  alt="ecommerce"
+                  className="object-contain object-center w-full h-full block"
+                  src={content.src}
+                />
+              </a>
+              <div className="mt-4">
+                {/* <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3> */}
+                <h2 className="text-gray-900 title-font text-lg font-medium">
+                  Content writing
+                </h2>
+                <p className="mt-1">$16.00</p>
+              </div>
+            </div>
+            <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
+              <a className="block relative h-48 rounded overflow-hidden">
+                <img
+                  alt="ecommerce"
+                  className="object-cover object-center w-full h-full block"
+                  src="https://dummyimage.com/425x265"
+                />
+              </a>
+              <div className="mt-4">
+                <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
+                  CATEGORY
+                </h3>
+                <h2 className="text-gray-900 title-font text-lg font-medium">
+                  Shooting Stars
+                </h2>
+                <p className="mt-1">$21.15</p>
+              </div>
+            </div>
+            <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
+              <a className="block relative h-48 rounded overflow-hidden">
+                <img
+                  alt="ecommerce"
+                  className="object-cover object-center w-full h-full block"
+                  src="https://dummyimage.com/427x267"
+                />
+              </a>
+              <div className="mt-4">
+                <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
+                  CATEGORY
+                </h3>
+                <h2 className="text-gray-900 title-font text-lg font-medium">
+                  Neptune
+                </h2>
+                <p className="mt-1">$12.00</p>
+              </div>
+            </div>
+            <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
+              <a className="block relative h-48 rounded overflow-hidden">
+                <img
+                  alt="ecommerce"
+                  className="object-cover object-center w-full h-full block"
+                  src="https://dummyimage.com/428x268"
+                />
+              </a>
+              <div className="mt-4">
+                <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
+                  CATEGORY
+                </h3>
+                <h2 className="text-gray-900 title-font text-lg font-medium">
+                  The 400 Blows
+                </h2>
+                <p className="mt-1">$18.40</p>
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-      <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-        <a className="block relative h-48 rounded overflow-hidden">
-          <img alt="ecommerce" className="object-contain object-center w-full h-full block" src={app.src}/>
-        </a>
-        <div className="mt-4">
-          {/* <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3> */}
-          <h2 className="text-gray-900 title-font text-lg font-medium">App development</h2>
-          <p className="mt-1">$21.15</p>
-        </div>
-      </div>
-      <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-        <a className="block relative h-48 rounded overflow-hidden">
-          <img alt="ecommerce" className="object-contain object-center w-full h-full block" src={seo.src}/>
-        </a>
-        <div className="mt-4">
-          {/* <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3> */}
-          <h2 className="text-gray-900 title-font text-lg font-medium">SEO</h2>
-          <p className="mt-1">$12.00</p>
-        </div>
-      </div>
-      <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-        <a className="block relative h-48 rounded overflow-hidden">
-          <img alt="ecommerce" className="object-contain object-center w-full h-full block" src={socialmedia.src}/>
-        </a>
-        <div className="mt-4">
-          {/* <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3> */}
-          <h2 className="text-gray-900 title-font text-lg font-medium">Social media marketing</h2>
-          <p className="mt-1">$18.40</p>
-        </div>
-      </div>
-      <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-        <a className="block relative h-48 rounded overflow-hidden">
-          <img alt="ecommerce" className="object-contain object-center w-full h-full block" src={content.src}/>
-        </a>
-        <div className="mt-4">
-          {/* <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3> */}
-          <h2 className="text-gray-900 title-font text-lg font-medium">Content writing</h2>
-          <p className="mt-1">$16.00</p>
-        </div>
-      </div>
-      <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-        <a className="block relative h-48 rounded overflow-hidden">
-          <img alt="ecommerce" className="object-cover object-center w-full h-full block" src="https://dummyimage.com/425x265"/>
-        </a>
-        <div className="mt-4">
-          <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-          <h2 className="text-gray-900 title-font text-lg font-medium">Shooting Stars</h2>
-          <p className="mt-1">$21.15</p>
-        </div>
-      </div>
-      <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-        <a className="block relative h-48 rounded overflow-hidden">
-          <img alt="ecommerce" className="object-cover object-center w-full h-full block" src="https://dummyimage.com/427x267"/>
-        </a>
-        <div className="mt-4">
-          <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-          <h2 className="text-gray-900 title-font text-lg font-medium">Neptune</h2>
-          <p className="mt-1">$12.00</p>
-        </div>
-      </div>
-      <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
-        <a className="block relative h-48 rounded overflow-hidden">
-          <img alt="ecommerce" className="object-cover object-center w-full h-full block" src="https://dummyimage.com/428x268"/>
-        </a>
-        <div className="mt-4">
-          <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3>
-          <h2 className="text-gray-900 title-font text-lg font-medium">The 400 Blows</h2>
-          <p className="mt-1">$18.40</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+      </section>
       <hr className="ml-10 mr-10" />
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto">

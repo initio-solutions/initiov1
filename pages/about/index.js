@@ -17,17 +17,26 @@ function About() {
               About Us
             </h1>
             <p className="mb-8 leading-relaxed">
-              Chillwave portland ugh, knausgaard fam polaroid iPhone. Man braid
-              swag typewriter affogato, hella selvage wolf narwhal dreamcatcher.
+              We are a full-service digital marketing agency that helps
+              businesses grow. Our services include web design and development,
+              SEO, content writing, social media marketing, and data analytics.
+              We work with clients from startups to Fortune 500 companies and
+              have helped them achieve their goals for almost 20 years. As a
+              content writer, you know how difficult it is to write compelling
+              and engaging content. You also know how difficult it is to find
+              time to write when you have other responsibilities like managing
+              social media, data analytics, and SEO. That's why we created
+              WriteBrain - an AI-powered content writing assistant that helps
+              you generate high-quality content in just a few seconds.
             </p>
             <div className="flex w-full md:justify-start justify-center items-end">
               <button className="inline-flex text-white bg-primary border-0 py-2 px-6 focus:outline-none hover:bg-yellow-400 rounded text-lg">
                 Button
               </button>
             </div>
-            <p className="text-sm mt-2 text-gray-500 mb-8 w-full">
+            {/* <p className="text-sm mt-2 text-gray-500 mb-8 w-full">
               Neutra shabby chic ramps, viral fixie.
-            </p>
+            </p> */}
           </div>
         </div>
       </section>
@@ -45,17 +54,20 @@ function About() {
               Why Choose Us?
             </h1>
             <p className="mb-8 leading-relaxed">
-              Chillwave portland ugh, knausgaard fam polaroid iPhone. Man braid
-              swag typewriter affogato, hella selvage wolf narwhal dreamcatcher.
+              We are a company that specializes in providing the best technology
+              solutions. Our team of experts is able to design, implement and
+              manage any type of IT infrastructure. We have been serving clients
+              for over 10 years, and we are proud to have a diverse portfolio of
+              satisfied customers.
             </p>
             <div className="flex w-full md:justify-start justify-center items-end">
               <button className="inline-flex text-white bg-primary border-0 py-2 px-6 focus:outline-none hover:bg-yellow-400 rounded text-lg">
                 Button
               </button>
             </div>
-            <p className="text-sm mt-2 text-gray-500 mb-8 w-full">
+            {/* <p className="text-sm mt-2 text-gray-500 mb-8 w-full">
               Neutra shabby chic ramps, viral fixie.
-            </p>
+            </p> */}
           </div>
         </div>
       </section>

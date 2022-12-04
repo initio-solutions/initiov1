@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import Router from "next/router";
+import Head from "next/head";
 import Link from "next/link";
 function Signin() {
   const [email, setEmail] = useState("");
@@ -30,6 +31,9 @@ function Signin() {
   };
   return (
     <section className="text-gray-600 body-font relative">
+      <Head>
+        <title>Sign In | Initio Solutions</title>
+      </Head>
       <div className="container px-5 py-24 mx-auto">
         <div className="flex flex-col text-center w-full mb-12">
           <h1 className="sm:text-3xl text-2xl font-medium title-font mb-4 text-gray-900">

@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Head from "next/head";
 import {
   FaFacebookF,
   FaTwitter,
@@ -42,6 +43,9 @@ export default function Contact() {
   };
   return (
     <section className="text-gray-600 body-font relative">
+      <Head>
+        <title>Contact | Initio Solutions</title>
+      </Head>
       <div className="container px-5 py-24 mx-auto">
         <div className="flex flex-col text-center w-full mb-12">
           <h1 className="mb-4 text-gray-900">Contact Us</h1>
