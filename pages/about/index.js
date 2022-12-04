@@ -1,6 +1,5 @@
 import about1 from "../../assets/about-1.png";
 import about2 from "../../assets/about-2.png";
-x;
 function About() {
   return (
     <>
