@@ -1,8 +1,12 @@
 import about1 from "../../assets/about-1.png";
 import about2 from "../../assets/about-2.png";
+import Head from 'next/head';
 function About() {
   return (
     <>
+      <Head>
+        <title>About | Initio Solutions</title>
+      </Head>
       <section className="text-gray-600 body-font">
         <div className="container mx-auto flex px-5 py-24 md:flex-row flex-col items-center">
           <div className="lg:max-w-lg lg:w-full md:w-1/2 w-5/6 mb-10 md:mb-0">

@@ -65,6 +65,10 @@ p {
 .logo {
   font-family: "M PLUS Code Latin", sans-serif;
 }
+#btn-back-to-top {
+  position: fixed;
+  display: none;
+}
 /*
 @media (prefers-color-scheme: dark) {
   html {
