@@ -1,9 +1,14 @@
 import about1 from "../../assets/about-1.png";
 import about2 from "../../assets/about-2.png";
 import Head from 'next/head';
+import { motion } from "framer-motion";
 function About() {
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
       <Head>
         <title>About | Initio Solutions</title>
       </Head>
@@ -75,7 +80,7 @@ function About() {
           </div>
         </div>
       </section>
-    </>
+    </motion.div>
   );
 }
 

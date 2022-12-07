@@ -6,9 +6,14 @@ import app from "../assets/app.png";
 import seo from "../assets/seo.png";
 import socialmedia from "../assets/socialmedia.png";
 import content from "../assets/content.png";
+import { motion } from "framer-motion";
 export default function page() {
   return (
-    <>
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+    >
       <Head>
         <title>Initio Solutions</title>
       </Head>
@@ -709,6 +714,6 @@ export default function page() {
           </div>
         </div>
       </section>
-    </>
+    </motion.div>
   );
 }

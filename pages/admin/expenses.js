@@ -1,5 +1,7 @@
 import Nav from "./nav";
 import { useState, useEffect } from "react";
+import { ImBin2 } from "react-icons/im";
+import { FiEdit2 } from "react-icons/fi";
 function Expenses() {
   const [name, setName] = useState("");
   const [amount, setAmount] = useState();
@@ -8,6 +10,7 @@ function Expenses() {
   useEffect(() => {
     getData();
   }, []);
+
   const getData = async () => {
     try {
       await fetch("/api/expenses", {
@@ -51,10 +54,57 @@ function Expenses() {
               setName("");
               setAmount();
             }
-          });
+          })
+          .then(getData());
       } catch (e) {
         console.error(e);
       }
+    }
+  };
+  const handleDelete = async (id) => {
+    try {
+      await fetch("/api/expenses", {
+        method: "DELETE",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          id,
+        }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.success === true) {
+            getData();
+          }
+        });
+    } catch (e) {
+      console.error(e);
+    }
+  };
+  const handleEdit = async (id) => {
+    try {
+      await fetch("/api/expenses", {
+        method: "PUT",
+        headers: {
+          Accept: "application/json",
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({
+          id,
+          name,
+          amount,
+        }),
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          if (data.success === true) {
+            getData();
+          }
+        });
+    } catch (e) {
+      console.log(e);
     }
   };
   return (
@@ -84,9 +134,20 @@ function Expenses() {
 
           <div className="flex-col">
             {data.map((d) => (
-              <div key={d.name} className="flex m-2 justify-center space-x-5 ">
+              <div
+                key={d.name}
+                className="flex m-2 justify-center items-center space-x-5 "
+              >
                 <p>{d?.name}</p>
-                <p>£{d?.amount}</p>
+                <p>£{d?.amount}</p>{" "}
+                <FiEdit2
+                  className="text-green-400"
+                  onClick={() => handleEdit(d._id)}
+                />
+                <ImBin2
+                  className="text-red-500"
+                  onClick={() => handleDelete(d._id)}
+                />
               </div>
             ))}
           </div>
