@@ -10,6 +10,7 @@ class MyDocument extends Document {
     return (
       <Html>
         <Script
+          id="meta"
           dangerouslySetInnerHTML={{
             __html: `!function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function()
