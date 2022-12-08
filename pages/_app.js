@@ -3,6 +3,7 @@ import Navbar from "../components/navbar";
 import Footer from "../components/footer";
 import ScrolltoTop from "../components/scrolltotop";
 import { useEffect } from "react";
+import Router from "next/router";
 function MyApp({ Component, pageProps }) {
   useEffect(() => {
     import("react-facebook-pixel")
@@ -10,11 +11,11 @@ function MyApp({ Component, pageProps }) {
       .then((ReactPixel) => {
         ReactPixel.init(process.env.PIXEL);
         ReactPixel.pageView();
-        router.events.on("routeChangeComplete", () => {
+        Router.events.on("routeChangeComplete", () => {
           ReactPixel.pageView();
         });
       });
-  }, [router.events]);
+  }, [Router.events]);
   return (
     <>
       <Navbar />
