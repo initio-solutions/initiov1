@@ -8,7 +8,7 @@ import socialmedia from "../assets/socialmedia.png";
 import content from "../assets/content.png";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
-export default function page() {
+export default function Page() {
   const route = useRouter();
   return (
     <motion.div
