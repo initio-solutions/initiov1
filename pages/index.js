@@ -39,7 +39,13 @@ export default function page() {
               can turn any idea into a reality.
             </p>
             <div className="flex justify-center">
-              <button className="inline-flex text-white bg-primary border-0 py-2 px-6 focus:outline-none hover:bg-yellow-400 rounded text-lg">
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  router.push("/about");
+                }}
+                className="inline-flex text-white bg-primary border-0 py-2 px-6 focus:outline-none hover:bg-yellow-400 rounded text-lg"
+              >
                 Know More
               </button>
               <button
@@ -62,28 +68,28 @@ export default function page() {
           <div className="flex flex-wrap -m-4 text-center">
             <div className="p-2 sm:w-1/4 w-full sm:border-r-2">
               <h2 className="font-medium sm:text-4xl text-3xl text-gray-900">
-                2.7K
+                <CountUp start={0} end={25} />
               </h2>
-              <p className="leading-relaxed">Users</p>
+              <p className="leading-relaxed">Customers</p>
             </div>
 
             <div className="sm:p-2 p-4 sm:w-1/4 w-full sm:border-r-2">
               <h2 className=" font-medium sm:text-4xl text-3xl text-gray-900">
-                1.8K
+                <CountUp start={0} end={25000} />
               </h2>
-              <p className="leading-relaxed">Subscribes</p>
+              <p className="leading-relaxed">Lines of Code</p>
             </div>
 
             <div className="sm:p-2 p-4 sm:w-1/4 w-full sm:border-r-2">
               <h2 className="font-medium sm:text-4xl text-3xl text-gray-900">
-                35
+                <CountUp start={0} end={30} />
               </h2>
-              <p className="leading-relaxed">Downloads</p>
+              <p className="leading-relaxed">Websites</p>
             </div>
 
             <div className="sm:p-2 p-4 sm:w-1/4 w-full">
               <h2 className="font-medium sm:text-4xl text-3xl text-gray-900">
-                4
+                <CountUp start={0} end={4} />
               </h2>
               <p className="leading-relaxed">Products</p>
             </div>
@@ -95,7 +101,15 @@ export default function page() {
         <div className="container px-5 py-24 mx-auto">
           <h1 className="mb-3">Services</h1>
           <div className="flex flex-wrap -m-4">
-            <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
+            <motion.div
+              whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+              style={{ cursor: "pointer" }}
+              onClick={(e) => {
+                e.preventDefault();
+                router.push("/services/website");
+              }}
+              className="lg:w-1/4 md:w-1/2 p-4 w-full"
+            >
               <a className="block relative h-48 rounded overflow-hidden">
                 <img
                   alt="ecommerce"
@@ -108,9 +122,9 @@ export default function page() {
                 <h2 className="text-gray-900 title-font text-lg font-medium">
                   Web development
                 </h2>
-                <p className="mt-1">$16.00</p>
+                {/* <p className="mt-1">$16.00</p> */}
               </div>
-            </div>
+            </motion.div>
             <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
               <a className="block relative h-48 rounded overflow-hidden">
                 <img
@@ -120,11 +134,9 @@ export default function page() {
                 />
               </a>
               <div className="mt-4">
-                {/* <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3> */}
                 <h2 className="text-gray-900 title-font text-lg font-medium">
                   App development
                 </h2>
-                <p className="mt-1">$21.15</p>
               </div>
             </div>
             <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
@@ -140,7 +152,6 @@ export default function page() {
                 <h2 className="text-gray-900 title-font text-lg font-medium">
                   SEO
                 </h2>
-                <p className="mt-1">$12.00</p>
               </div>
             </div>
             <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
@@ -152,11 +163,9 @@ export default function page() {
                 />
               </a>
               <div className="mt-4">
-                {/* <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3> */}
                 <h2 className="text-gray-900 title-font text-lg font-medium">
                   Social media marketing
                 </h2>
-                <p className="mt-1">$18.40</p>
               </div>
             </div>
             <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
@@ -172,7 +181,6 @@ export default function page() {
                 <h2 className="text-gray-900 title-font text-lg font-medium">
                   Content writing
                 </h2>
-                {/* <p className="mt-1">$16.00</p> */}
               </div>
             </div>
             <div className="lg:w-1/4 md:w-1/2 p-4 w-full">

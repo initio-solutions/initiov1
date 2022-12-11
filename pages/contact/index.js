@@ -7,6 +7,7 @@ import {
   FaLinkedin,
 } from "react-icons/fa";
 import { TiTick } from "react-icons/ti";
+import { motion } from "framer-motion";
 export default function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
@@ -42,7 +43,12 @@ export default function Contact() {
     }
   };
   return (
-    <section className="text-gray-600 body-font relative">
+    <motion.section
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="text-gray-600 body-font relative"
+    >
       <Head>
         <title>Contact | Initio Solutions</title>
       </Head>
@@ -155,6 +161,6 @@ export default function Contact() {
           </div>
         </div>
       </div>
-    </section>
+    </motion.section>
   );
 }
