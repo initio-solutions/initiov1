@@ -7,7 +7,9 @@ import seo from "../assets/seo.png";
 import socialmedia from "../assets/socialmedia.png";
 import content from "../assets/content.png";
 import { motion } from "framer-motion";
+import { useRouter } from "next/router";
 export default function page() {
+  const router = useRouter();
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -38,10 +40,16 @@ export default function page() {
             </p>
             <div className="flex justify-center">
               <button className="inline-flex text-white bg-primary border-0 py-2 px-6 focus:outline-none hover:bg-yellow-400 rounded text-lg">
-                Button
+                Know More
               </button>
-              <button className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg">
-                Button
+              <button
+                onClick={(e) => {
+                  e.preventDefault();
+                  router.push("/contact");
+                }}
+                className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg"
+              >
+                Contact Us
               </button>
             </div>
           </div>
@@ -164,7 +172,7 @@ export default function page() {
                 <h2 className="text-gray-900 title-font text-lg font-medium">
                   Content writing
                 </h2>
-                <p className="mt-1">$16.00</p>
+                {/* <p className="mt-1">$16.00</p> */}
               </div>
             </div>
             <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
