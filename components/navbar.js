@@ -3,6 +3,7 @@ import Link from "next/link";
 import Router from "next/router";
 import { useState, useEffect } from "react";
 import Logo from "./logo";
+import { motion } from "framer-motion";
 function Navbar() {
   const [signin, setSignin] = useState(false);
   useEffect(() => {
@@ -23,22 +24,33 @@ function Navbar() {
     <header className="text-gray-600 body-font">
       <div className="container mx-auto flex flex-wrap p-1 flex-col md:flex-row items-center">
         <nav className="flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
-          <Link href="/about" className="mr-5 hover:text-gray-900">
-            About
-          </Link>
-          <Link href="/blog" className="mr-5 hover:text-gray-900">
-            Blog
-          </Link>
-          <Link href="/careers" className="mr-5 hover:text-gray-900">
-            Careers
-          </Link>
-          <Link href="/past-work" className="mr-5 hover:text-gray-900">
-            Past Work
-          </Link>
-          <Link href="/products" className="hover:text-gray-900">
-            Products
-          </Link>
+          <motion.div whileHover={{ y: -5, transition: { duration: 0.2 } }}>
+            <Link href="/about" className="mr-5 hover:text-gray-900">
+              About
+            </Link>
+          </motion.div>
+          <motion.div whileHover={{ y: -5, transition: { duration: 0.2 } }}>
+            <Link href="/blog" className="mr-5 hover:text-gray-900">
+              Blog
+            </Link>
+          </motion.div>
+          <motion.div whileHover={{ y: -5, transition: { duration: 0.2 } }}>
+            <Link href="/careers" className="mr-5 hover:text-gray-900">
+              Careers
+            </Link>
+          </motion.div>
+          <motion.div whileHover={{ y: -5, transition: { duration: 0.2 } }}>
+            <Link href="/past-work" className="mr-5 hover:text-gray-900">
+              Past Work
+            </Link>
+          </motion.div>
+          <motion.div whileHover={{ y: -5, transition: { duration: 0.2 } }}>
+            <Link href="/products" className="hover:text-gray-900">
+              Products
+            </Link>
+          </motion.div>
         </nav>
+
         <Link
           href="/"
           className="flex order-first lg:order-none lg:w-1/5 items-center text-gray-900 lg:items-center lg:justify-center "
@@ -46,12 +58,15 @@ function Navbar() {
           <Logo size="15%" />
           {/* <img src={logo.src} width="55%" /> */}
         </Link>
+
         <div className="lg:w-2/5 inline-flex items-center lg:justify-end ml-5 lg:ml-0">
           {signin ? (
             <>
-              <Link href="/dashboard" className="hover:text-gray-900 mr-4">
-                Dashboard
-              </Link>
+              <motion.div whileHover={{ y: -5, transition: { duration: 0.2 } }}>
+                <Link href="/dashboard" className="hover:text-gray-900 mr-4">
+                  Dashboard
+                </Link>
+              </motion.div>
               <button
                 onClick={logout}
                 className="mr-4 text-lg hover:text-gray-900"
@@ -78,10 +93,11 @@ function Navbar() {
               </svg>
             </button>
           )}
-
-          <Link href="/contact" className="hover:text-gray-900 ml-2">
-            Contact
-          </Link>
+          <motion.div whileHover={{ y: -5, transition: { duration: 0.2 } }}>
+            <Link href="/contact" className="hover:text-gray-900 ml-2">
+              Contact
+            </Link>
+          </motion.div>
         </div>
       </div>
       <hr className="mx-14" />
