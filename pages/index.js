@@ -9,7 +9,7 @@ import content from "../assets/content.png";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 export default function page() {
-  const router = useRouter();
+  const route = useRouter();
   return (
     <motion.div
       initial={{ opacity: 0 }}
@@ -42,7 +42,7 @@ export default function page() {
               <button
                 onClick={(e) => {
                   e.preventDefault();
-                  router.push("/about");
+                  route.push("/about");
                 }}
                 className="inline-flex text-white bg-primary border-0 py-2 px-6 focus:outline-none hover:bg-yellow-400 rounded text-lg"
               >
@@ -51,7 +51,7 @@ export default function page() {
               <button
                 onClick={(e) => {
                   e.preventDefault();
-                  router.push("/contact");
+                  route.push("/contact");
                 }}
                 className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg"
               >
@@ -106,7 +106,7 @@ export default function page() {
               style={{ cursor: "pointer" }}
               onClick={(e) => {
                 e.preventDefault();
-                router.push("/services/website");
+                route.push("/services/website");
               }}
               className="lg:w-1/4 md:w-1/2 p-4 w-full"
             >
