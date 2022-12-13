@@ -638,7 +638,7 @@ export default function Page() {
                       <path d="M20 6L9 17l-5-5"></path>
                     </svg>
                   </span>
-                  Adwords and branding
+                  Adwords and Branding
                 </p>
                 {/* <button className="flex items-center mt-auto text-white bg-gray-400 border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-500 rounded">
                   Button
@@ -749,7 +749,7 @@ export default function Page() {
                       <path d="M20 6L9 17l-5-5"></path>
                     </svg>
                   </span>
-                  Autonation and AI integration
+                  Automation and AI integration
                 </p>
                 {/* <button className="flex items-center mt-auto text-white bg-gray-400 border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-500 rounded">
                   Button
