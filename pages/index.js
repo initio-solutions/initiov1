@@ -496,7 +496,7 @@ export default function Page() {
                       <path d="M20 6L9 17l-5-5"></path>
                     </svg>
                   </span>
-                  Mixtape chillwave tumeric
+                  Product data entry
                 </p>
                 {/* <button className="flex items-center mt-auto text-white bg-yellow-200 border-0 py-2 px-4 w-full focus:outline-none hover:bg-indigo-600 rounded">
                   Button
@@ -543,7 +543,7 @@ export default function Page() {
                       <path d="M20 6L9 17l-5-5"></path>
                     </svg>
                   </span>
-                  Vexillologist pitchfork
+                  Inhouse tech products
                 </p>
                 <p className="flex items-center text-gray-600 mb-2">
                   <span className="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
@@ -559,7 +559,7 @@ export default function Page() {
                       <path d="M20 6L9 17l-5-5"></path>
                     </svg>
                   </span>
-                  Tumeric plaid portland
+                  CMS and database integration
                 </p>
                 <p className="flex items-center text-gray-600 mb-2">
                   <span className="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
@@ -575,7 +575,7 @@ export default function Page() {
                       <path d="M20 6L9 17l-5-5"></path>
                     </svg>
                   </span>
-                  Hexagon neutra unicorn
+                  Social media marketing and SEO
                 </p>
                 <p className="flex items-center text-gray-600 mb-2">
                   <span className="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
@@ -591,7 +591,7 @@ export default function Page() {
                       <path d="M20 6L9 17l-5-5"></path>
                     </svg>
                   </span>
-                  Vexillologist pitchfork
+                  Data Encryption and Analytics
                 </p>
                 <p className="flex items-center text-gray-600 mb-6">
                   <span className="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
@@ -607,7 +607,7 @@ export default function Page() {
                       <path d="M20 6L9 17l-5-5"></path>
                     </svg>
                   </span>
-                  Mixtape chillwave tumeric
+                  Adwords and branding
                 </p>
                 {/* <button className="flex items-center mt-auto text-white bg-gray-400 border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-500 rounded">
                   Button
@@ -702,7 +702,7 @@ export default function Page() {
                       <path d="M20 6L9 17l-5-5"></path>
                     </svg>
                   </span>
-                  Vexillologist pitchfork
+                  Mobile app integration
                 </p>
                 <p className="flex items-center text-gray-600 mb-6">
                   <span className="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
@@ -718,7 +718,7 @@ export default function Page() {
                       <path d="M20 6L9 17l-5-5"></path>
                     </svg>
                   </span>
-                  Mixtape chillwave tumeric
+                  Autonation and AI integration
                 </p>
                 {/* <button className="flex items-center mt-auto text-white bg-gray-400 border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-500 rounded">
                   Button
