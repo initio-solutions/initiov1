@@ -6,6 +6,9 @@ import app from "../assets/app.png";
 import seo from "../assets/seo.png";
 import socialmedia from "../assets/socialmedia.png";
 import content from "../assets/content.png";
+import data from "../assets/data.png";
+import dataentry from "../assets/dataentry.png";
+import graphic from "../assets/graphic.png";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 export default function Page() {
@@ -125,7 +128,11 @@ export default function Page() {
                 {/* <p className="mt-1">$16.00</p> */}
               </div>
             </motion.div>
-            <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
+            <motion.div
+              whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+              style={{ cursor: "pointer" }}
+              className="lg:w-1/4 md:w-1/2 p-4 w-full"
+            >
               <a className="block relative h-48 rounded overflow-hidden">
                 <img
                   alt="ecommerce"
@@ -138,8 +145,12 @@ export default function Page() {
                   App development
                 </h2>
               </div>
-            </div>
-            <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+              style={{ cursor: "pointer" }}
+              className="lg:w-1/4 md:w-1/2 p-4 w-full"
+            >
               <a className="block relative h-48 rounded overflow-hidden">
                 <img
                   alt="ecommerce"
@@ -153,8 +164,12 @@ export default function Page() {
                   SEO
                 </h2>
               </div>
-            </div>
-            <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+              style={{ cursor: "pointer" }}
+              className="lg:w-1/4 md:w-1/2 p-4 w-full"
+            >
               <a className="block relative h-48 rounded overflow-hidden">
                 <img
                   alt="ecommerce"
@@ -167,8 +182,12 @@ export default function Page() {
                   Social media marketing
                 </h2>
               </div>
-            </div>
-            <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+              style={{ cursor: "pointer" }}
+              className="lg:w-1/4 md:w-1/2 p-4 w-full"
+            >
               <a className="block relative h-48 rounded overflow-hidden">
                 <img
                   alt="ecommerce"
@@ -182,61 +201,73 @@ export default function Page() {
                   Content writing
                 </h2>
               </div>
-            </div>
-            <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+              style={{ cursor: "pointer" }}
+              className="lg:w-1/4 md:w-1/2 p-4 w-full"
+            >
               <a className="block relative h-48 rounded overflow-hidden">
                 <img
                   alt="ecommerce"
-                  className="object-cover object-center w-full h-full block"
-                  src="https://dummyimage.com/425x265"
+                  className="object-contain object-center w-full h-full block"
+                  src={data.src}
                 />
               </a>
               <div className="mt-4">
-                <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
+                {/* <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
                   CATEGORY
-                </h3>
+                </h3> */}
                 <h2 className="text-gray-900 title-font text-lg font-medium">
-                  Shooting Stars
+                  Cloud and Data
                 </h2>
-                <p className="mt-1">$21.15</p>
+                {/* <p className="mt-1">$21.15</p> */}
               </div>
-            </div>
-            <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+              style={{ cursor: "pointer" }}
+              className="lg:w-1/4 md:w-1/2 p-4 w-full"
+            >
               <a className="block relative h-48 rounded overflow-hidden">
                 <img
                   alt="ecommerce"
-                  className="object-cover object-center w-full h-full block"
-                  src="https://dummyimage.com/427x267"
+                  className="object-contain object-center w-full h-full block"
+                  src={dataentry.src}
                 />
               </a>
               <div className="mt-4">
-                <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
+                {/* <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
                   CATEGORY
-                </h3>
+                </h3> */}
                 <h2 className="text-gray-900 title-font text-lg font-medium">
-                  Neptune
+                  Data Entry
                 </h2>
-                <p className="mt-1">$12.00</p>
+                {/* <p className="mt-1">$12.00</p> */}
               </div>
-            </div>
-            <div className="lg:w-1/4 md:w-1/2 p-4 w-full">
+            </motion.div>
+            <motion.div
+              whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+              style={{ cursor: "pointer" }}
+              className="lg:w-1/4 md:w-1/2 p-4 w-full"
+            >
               <a className="block relative h-48 rounded overflow-hidden">
                 <img
                   alt="ecommerce"
-                  className="object-cover object-center w-full h-full block"
-                  src="https://dummyimage.com/428x268"
+                  className="object-contain object-center w-full h-full block"
+                  src={graphic.src}
                 />
               </a>
               <div className="mt-4">
-                <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
+                {/* <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
                   CATEGORY
-                </h3>
+                </h3> */}
                 <h2 className="text-gray-900 title-font text-lg font-medium">
-                  The 400 Blows
+                  Graphic Design
                 </h2>
-                <p className="mt-1">$18.40</p>
+                {/* <p className="mt-1">$18.40</p> */}
               </div>
-            </div>
+            </motion.div>
           </div>
         </div>
       </section>
