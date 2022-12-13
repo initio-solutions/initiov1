@@ -8,17 +8,14 @@ export default async function handler(req, res) {
   switch (method) {
     case "POST":
       try {
-        console.log(req.body);
         let user = await User.findOne({ email: req.body.email });
-        console.log(user);
         const bytes = CryptoJS.AES.decrypt(
           user.password,
           process.env.CRYPTO_SECRET
         );
         const decryptedData = bytes.toString(CryptoJS.enc.Utf8);
-        console.log(decryptedData);
+
         if (user) {
-          console.log(user);
           if (
             req.body.email === user.email &&
             req.body.password === decryptedData
@@ -31,7 +28,9 @@ export default async function handler(req, res) {
               }
             );
             console.log({ token });
-            return res.status(200).json({ token, success: true });
+            var role = user.role;
+
+            return res.status(200).json({ token, success: true, role });
           } else {
             return res
               .status(200)
