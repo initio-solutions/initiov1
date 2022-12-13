@@ -318,7 +318,7 @@ export default function Page() {
         <div className="container px-5 py-24 mx-auto">
           <div className="flex flex-col text-center w-full mb-20">
             <h1 className="sm:text-4xl text-3xl font-medium mb-2 text-white">
-              Pricing
+              Pricing Tiers
             </h1>
             <p className="lg:w-2/3 mx-auto leading-relaxed text-gray-500">
               Customisable package for your needs.
@@ -416,10 +416,10 @@ export default function Page() {
                   ECOMMERCE
                 </h2>
                 <h1 className="text-5xl text-gray-900 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
-                  <span>$38</span>
-                  <span className="text-lg ml-1 font-normal text-gray-500">
+                  <span>Pro</span>
+                  {/* <span className="text-lg ml-1 font-normal text-gray-500">
                     /mo
-                  </span>
+                  </span> */}
                 </h1>
                 <p className="flex items-center text-gray-600 mb-2">
                   <span className="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
@@ -435,7 +435,7 @@ export default function Page() {
                       <path d="M20 6L9 17l-5-5"></path>
                     </svg>
                   </span>
-                  Vexillologist pitchfork
+                  Registration and Cart
                 </p>
                 <p className="flex items-center text-gray-600 mb-2">
                   <span className="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
@@ -451,7 +451,7 @@ export default function Page() {
                       <path d="M20 6L9 17l-5-5"></path>
                     </svg>
                   </span>
-                  Tumeric plaid portland
+                  Tracking and payment gateway
                 </p>
                 <p className="flex items-center text-gray-600 mb-2">
                   <span className="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
@@ -467,7 +467,7 @@ export default function Page() {
                       <path d="M20 6L9 17l-5-5"></path>
                     </svg>
                   </span>
-                  Hexagon neutra unicorn
+                  Emails and Customer care
                 </p>
                 <p className="flex items-center text-gray-600 mb-6">
                   <span className="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">

@@ -1,9 +1,15 @@
 import Link from "next/link";
 import Head from "next/head";
 import four from "../assets/404.png";
+import { motion } from "framer-motion";
 export default function FourOhFour() {
   return (
-    <div className="h-screen">
+    <motion.div
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      transition={{ duration: 0.5 }}
+      className="h-screen"
+    >
       <Head>
         <title>404 | Initio Solutions</title>
       </Head>
@@ -15,6 +21,6 @@ export default function FourOhFour() {
           <Link href="/">Go back home</Link>
         </div>
       </div>
-    </div>
+    </motion.div>
   );
 }
