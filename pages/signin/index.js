@@ -24,10 +24,10 @@ function Signin() {
       localStorage.setItem("token", response.token);
       localStorage.setItem("email", email);
       localStorage.setItem("role", response.role);
-      if (email === process.env.ADMIN_EMAIL) {
-        Router.push("/admin");
+      if (response.role == 0) {
+        Router.push("/admin").then(() => window.location.reload());
       } else {
-        Router.push("/dashboard");
+        Router.push("/dashboard").then(() => window.location.reload());
       }
     }
   };
