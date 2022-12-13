@@ -51,7 +51,7 @@ function Signin() {
               value={email}
               onChange={(e) => setEmail(e.target.value)}
               name="email"
-              className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-yellow-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
             />
           </div>
         </div>
@@ -66,7 +66,7 @@ function Signin() {
               value={password}
               onChange={(e) => setPassword(e.target.value)}
               name="password"
-              className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-indigo-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
+              className="w-full bg-gray-100 bg-opacity-50 rounded border border-gray-300 focus:border-yellow-500 focus:bg-white focus:ring-2 focus:ring-indigo-200 text-base outline-none text-gray-700 py-1 px-3 leading-8 transition-colors duration-200 ease-in-out"
             />
           </div>
         </div>
@@ -82,7 +82,7 @@ function Signin() {
         <div className="p-2 w-1/2 mx-auto text-center">
           <h2 className="sm:text-lg text-xl text-gray-900">
             Don&rsquo;t have an account?{" "}
-            <Link className="text-blue-600" href="/signup">
+            <Link className="text-yellow-400" href="/signup">
               Sign Up
             </Link>
           </h2>

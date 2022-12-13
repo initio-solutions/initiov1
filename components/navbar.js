@@ -53,7 +53,7 @@ function Navbar() {
 
         <Link
           href="/"
-          className="flex order-first lg:order-none lg:w-1/5 items-center text-gray-900 lg:items-center lg:justify-center "
+          className="flex order-first lg:order-none lg:w-1/5 w-1/2 items-center text-gray-900 lg:items-center lg:justify-center "
         >
           <Logo size="15%" />
           {/* <img src={logo.src} width="55%" /> */}
