@@ -78,14 +78,14 @@ export default function Page() {
 
             <div className="sm:p-2 p-4 sm:w-1/4 w-full sm:border-r-2">
               <h2 className=" font-medium sm:text-4xl text-3xl text-gray-900">
-                <CountUp start={0} end={25000} />
+                <CountUp start={0} end={25689} />
               </h2>
               <p className="leading-relaxed">Lines of Code</p>
             </div>
 
             <div className="sm:p-2 p-4 sm:w-1/4 w-full sm:border-r-2">
               <h2 className="font-medium sm:text-4xl text-3xl text-gray-900">
-                <CountUp start={0} end={30} />
+                <CountUp start={0} end={32} />
               </h2>
               <p className="leading-relaxed">Websites</p>
             </div>
@@ -367,12 +367,12 @@ export default function Page() {
             <p className="lg:w-2/3 mx-auto leading-relaxed text-gray-500">
               Customisable package for your needs.
             </p>
-            <div className="flex mx-auto border-2 border-yellow-200 rounded overflow-hidden mt-6">
+            {/* <div className="flex mx-auto border-2 border-yellow-200 rounded overflow-hidden mt-6">
               <button className="py-1 px-4 bg-primary text-black focus:outline-none">
                 Monthly
               </button>
               <button className="py-1 px-4 focus:outline-none">Annually</button>
-            </div>
+            </div> */}
           </div>
           <div className="flex flex-wrap -m-4">
             <div className="p-4 xl:w-1/4 md:w-1/2 w-full ">
