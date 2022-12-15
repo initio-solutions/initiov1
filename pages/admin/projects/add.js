@@ -1,6 +1,6 @@
 import { useState } from "react";
 import Head from "next/head";
-function add() {
+function Add() {
   const [email, setEmail] = useState("");
   const [name, setName] = useState("");
   const [description, setDescription] = useState("");
@@ -98,4 +98,4 @@ function add() {
   );
 }
 
-export default add;
+export default Add;
