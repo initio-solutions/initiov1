@@ -30,7 +30,7 @@ function Footer() {
           </Link>
           <Link
             target="_blank"
-            href="https://linkedin.com/initiosolutions"
+            href="https://www.linkedin.com/company/initiosolutions/"
             className="ml-3 text-gray-500"
           >
             <FaLinkedin className="text-2xl" />

@@ -3,12 +3,12 @@ import Contact from "../../models/Contact";
 import nodemailer from "nodemailer";
 export default async function handler(req, res) {
   let transporter = nodemailer.createTransport({
-    host: "smtppro.zoho.eu",
+    host: "smtp.gmail.com",
     port: 465,
     secure: true,
     auth: {
-      user: "support@initiosolutions.com",
-      pass: process.env.PASS,
+      user: "initiosol@gmail.com",
+      pass: "iwnqgyjxzjhojdvo",
     },
   });
   const { method } = req;
@@ -25,11 +25,18 @@ export default async function handler(req, res) {
     case "POST":
       try {
         const contact = await Contact.create(req.body);
+
         let info = await transporter.sendMail({
-          from: "support@initiosolutions.com",
-          to: "intiosol@gmail.com",
+          from: "initiosol@gmail.com",
+          to: "support@initiosolutions.com",
           subject: "You got a new lead!!",
-          text: "Hi",
+          html: `
+            <div>
+              <div style='margin-bottom:'10px'><b>Name :</b> ${req.body.name}</div>
+              <div style='margin-bottom:'10px'><b>Email :</b> ${req.body.email}</div>
+              <div><b>Message: </b>${req.body.message}</div>
+            </div>
+          `,
         });
         console.log("Message sent: %s", info);
         res.status(201).json({ success: true, data: contact });
