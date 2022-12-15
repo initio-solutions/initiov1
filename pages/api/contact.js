@@ -8,7 +8,7 @@ export default async function handler(req, res) {
     secure: true,
     auth: {
       user: "initiosol@gmail.com",
-      pass: "iwnqgyjxzjhojdvo",
+      pass: process.env.PASS,
     },
   });
   const { method } = req;
