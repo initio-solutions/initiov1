@@ -40,7 +40,6 @@ function Expenses() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (name !== "" || amount !== undefined) {
-      console.log(name, amount);
       try {
         await fetch("/api/expenses", {
           method: "POST",
