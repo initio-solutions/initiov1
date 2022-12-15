@@ -6,13 +6,13 @@ import {
   FaInstagram,
   FaLinkedin,
 } from "react-icons/fa";
-import { TiTick } from "react-icons/ti";
 import { motion } from "framer-motion";
+import Message from "../../components/message";
 export default function Contact() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
-  const [sent, setSent] = useState(false);
+  const [sent, setSent] = useState(null);
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
@@ -36,7 +36,7 @@ export default function Contact() {
             setName("");
             setEmail("");
             setMessage("");
-          }
+          } else setSent(false);
         });
     } catch (e) {
       console.error(e);
@@ -126,14 +126,18 @@ export default function Contact() {
                 Submit
               </button>
             </div>
-            {sent && (
-              <div className="bg-green-200 border-green-500 border p-2 rounded flex text-center mx-auto">
-                <TiTick className=" text-2xl rounded mr-2" />
-                <p className="text-base">
-                  Your Response has been sent successfully!
-                </p>
-              </div>
+
+            {sent == true ? (
+              <Message
+                error={false}
+                text="Your Response has been sent successfully!"
+              />
+            ) : (
+              sent == false && (
+                <Message error={true} text="Please check your Input" />
+              )
             )}
+            {console.log(sent)}
             <div className="p-2 w-full pt-8 mt-8 border-t border-gray-200 text-center">
               <a href="mailto: support@initiosolutions.com" className="primary">
                 support@initiosolutions.com
