@@ -1,4 +1,8 @@
 import Head from "next/head";
+import { motion } from "framer-motion";
+import arabian from "../../assets/arabian.png";
+import influencer from "../../assets/influencer.png";
+import acaa from "../../assets/acaa.png";
 function PastWork() {
   return (
     <>
@@ -6,10 +10,15 @@ function PastWork() {
         <title>Past Work | Initio Solutions</title>
       </Head>
       <section className="text-gray-600 body-font">
-        <div className="container px-5 py-24 mx-auto flex flex-wrap">
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.5 }}
+          className="container px-5 py-24 mx-auto flex flex-wrap"
+        >
           <div className="flex w-full mb-20 flex-wrap">
             <h1 className="sm:text-3xl text-2xl font-medium title-font text-gray-900 lg:w-1/3 lg:mb-0 mb-4">
-              Gallery
+              Our Work
             </h1>
             <p className="lg:pl-6 lg:w-2/3 mx-auto leading-relaxed text-base">
               Our Past work has been a major part of the life of every
@@ -28,21 +37,21 @@ function PastWork() {
                 <img
                   alt="gallery"
                   className="w-full object-cover h-full object-center block"
-                  src="https://dummyimage.com/500x300"
+                  src={arabian.src}
                 />
               </div>
               <div className="md:p-2 p-1 w-1/2">
                 <img
                   alt="gallery"
                   className="w-full object-cover h-full object-center block"
-                  src="https://dummyimage.com/501x301"
+                  src={influencer.src}
                 />
               </div>
               <div className="md:p-2 p-1 w-full">
                 <img
                   alt="gallery"
                   className="w-full h-full object-cover object-center block"
-                  src="https://dummyimage.com/600x360"
+                  src={acaa.src}
                 />
               </div>
             </div>
@@ -70,7 +79,7 @@ function PastWork() {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
       </section>
     </>
   );
