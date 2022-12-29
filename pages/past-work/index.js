@@ -3,6 +3,9 @@ import { motion } from "framer-motion";
 import arabian from "../../assets/arabian.png";
 import influencer from "../../assets/influencer.png";
 import acaa from "../../assets/acaa.png";
+import medblocks from "../../assets/medblocks.png";
+import mitfl from "../../assets/mitfl.png";
+import d2 from "../../assets/d2.png";
 function PastWork() {
   return (
     <>
@@ -34,48 +37,60 @@ function PastWork() {
           <div className="flex flex-wrap md:-m-2 -m-1">
             <div className="flex flex-wrap w-1/2">
               <div className="md:p-2 p-1 w-1/2">
-                <img
-                  alt="gallery"
-                  className="w-full object-cover h-full object-center block"
-                  src={arabian.src}
-                />
+                <a href="https://arabianblossom.com/" target="_blank">
+                  <img
+                    alt="gallery"
+                    className="w-full object-cover h-full object-center block"
+                    src={arabian.src}
+                  />
+                </a>
               </div>
               <div className="md:p-2 p-1 w-1/2">
-                <img
-                  alt="gallery"
-                  className="w-full object-cover h-full object-center block"
-                  src={influencer.src}
-                />
+                <a href="https://www.influencer.in/" target="_blank">
+                  <img
+                    alt="gallery"
+                    className="w-full object-cover h-full object-center block"
+                    src={influencer.src}
+                  />
+                </a>
               </div>
               <div className="md:p-2 p-1 w-full">
-                <img
-                  alt="gallery"
-                  className="w-full h-full object-cover object-center block"
-                  src={acaa.src}
-                />
+                <a href="https://acaa.org.uk/" target="_blank">
+                  <img
+                    alt="gallery"
+                    className="w-full h-full object-cover object-center block"
+                    src={acaa.src}
+                  />
+                </a>
               </div>
             </div>
             <div className="flex flex-wrap w-1/2">
               <div className="md:p-2 p-1 w-full">
-                <img
-                  alt="gallery"
-                  className="w-full h-full object-cover object-center block"
-                  src="https://dummyimage.com/601x361"
-                />
+                <a href="https://medblocks.org/" target="_blank">
+                  <img
+                    alt="gallery"
+                    className="w-full h-full object-cover object-center block"
+                    src={medblocks.src}
+                  />
+                </a>
               </div>
               <div className="md:p-2 p-1 w-1/2">
-                <img
-                  alt="gallery"
-                  className="w-full object-cover h-full object-center block"
-                  src="https://dummyimage.com/502x302"
-                />
+                <a href="https://mitfl.home.blog/" target="_blank">
+                  <img
+                    alt="gallery"
+                    className="w-full object-cover h-full object-center block"
+                    src={mitfl.src}
+                  />
+                </a>
               </div>
               <div className="md:p-2 p-1 w-1/2">
-                <img
-                  alt="gallery"
-                  className="w-full object-cover h-full object-center block"
-                  src="https://dummyimage.com/503x303"
-                />
+                <a href="https://d2scale.in/" target="_blank">
+                  <img
+                    alt="gallery"
+                    className="w-full object-cover h-full object-center block"
+                    src={d2.src}
+                  />
+                </a>
               </div>
             </div>
           </div>
