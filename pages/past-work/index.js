@@ -37,7 +37,11 @@ function PastWork() {
           <div className="flex flex-wrap md:-m-2 -m-1">
             <div className="flex flex-wrap w-1/2">
               <div className="md:p-2 p-1 w-1/2">
-                <a href="https://arabianblossom.com/" target="_blank">
+                <a
+                  href="https://arabianblossom.com/"
+                  rel="noreferrer"
+                  target="_blank"
+                >
                   <img
                     alt="gallery"
                     className="w-full object-cover h-full object-center block"
@@ -46,7 +50,11 @@ function PastWork() {
                 </a>
               </div>
               <div className="md:p-2 p-1 w-1/2">
-                <a href="https://www.influencer.in/" target="_blank">
+                <a
+                  href="https://www.influencer.in/"
+                  rel="noreferrer"
+                  target="_blank"
+                >
                   <img
                     alt="gallery"
                     className="w-full object-cover h-full object-center block"
@@ -55,7 +63,7 @@ function PastWork() {
                 </a>
               </div>
               <div className="md:p-2 p-1 w-full">
-                <a href="https://acaa.org.uk/" target="_blank">
+                <a href="https://acaa.org.uk/" rel="noreferrer" target="_blank">
                   <img
                     alt="gallery"
                     className="w-full h-full object-cover object-center block"
@@ -66,7 +74,11 @@ function PastWork() {
             </div>
             <div className="flex flex-wrap w-1/2">
               <div className="md:p-2 p-1 w-full">
-                <a href="https://medblocks.org/" target="_blank">
+                <a
+                  href="https://medblocks.org/"
+                  rel="noreferrer"
+                  target="_blank"
+                >
                   <img
                     alt="gallery"
                     className="w-full h-full object-cover object-center block"
@@ -75,7 +87,11 @@ function PastWork() {
                 </a>
               </div>
               <div className="md:p-2 p-1 w-1/2">
-                <a href="https://mitfl.home.blog/" target="_blank">
+                <a
+                  href="https://mitfl.home.blog/"
+                  rel="noreferrer"
+                  target="_blank"
+                >
                   <img
                     alt="gallery"
                     className="w-full object-cover h-full object-center block"
@@ -84,7 +100,7 @@ function PastWork() {
                 </a>
               </div>
               <div className="md:p-2 p-1 w-1/2">
-                <a href="https://d2scale.in/" target="_blank">
+                <a href="https://d2scale.in/" rel="noreferrer" target="_blank">
                   <img
                     alt="gallery"
                     className="w-full object-cover h-full object-center block"
