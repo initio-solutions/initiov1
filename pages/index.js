@@ -12,6 +12,7 @@ import graphic from "../assets/graphic.png";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
 import Link from "next/link";
+// import TransparentCard from "../components/transparentcard";
 export default function Page() {
   const route = useRouter();
   return (
@@ -63,7 +64,9 @@ export default function Page() {
           </div>
         </div>
       </section>
-
+      {/* <div className="bg-yellow-100 p-4 flex items-center justify-center">
+        <TransparentCard />
+      </div> */}
       <hr className="ml-10 mr-10" />
       <section className="text-gray-600 body-font">
         <div className="container px-5 py-12 mx-auto">
