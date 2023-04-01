@@ -11,6 +11,7 @@ import dataentry from "../assets/dataentry.png";
 import graphic from "../assets/graphic.png";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
+import Link from "next/link";
 export default function Page() {
   const route = useRouter();
   return (
@@ -42,15 +43,13 @@ export default function Page() {
               can turn any idea into a reality.
             </p>
             <div className="flex justify-center">
-              <button
-                onClick={(e) => {
-                  e.preventDefault();
-                  route.push("/about");
-                }}
+              <Link
+                target="_blank"
+                href="https://calendly.com/initiosolutions/30min"
                 className="inline-flex text-white bg-primary border-0 py-2 px-6 focus:outline-none hover:bg-yellow-400 rounded text-lg"
               >
-                Know More
-              </button>
+                Book a call
+              </Link>
               <button
                 onClick={(e) => {
                   e.preventDefault();

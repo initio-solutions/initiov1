@@ -4,8 +4,9 @@ import arabian from "../../assets/arabian.png";
 import influencer from "../../assets/influencer.png";
 import acaa from "../../assets/acaa.png";
 import medblocks from "../../assets/medblocks.png";
-import mitfl from "../../assets/mitfl.png";
+// import mitfl from "../../assets/mitfl.png";
 import d2 from "../../assets/d2.png";
+import dreamed from "../../assets/dreamed.png";
 function PastWork() {
   return (
     <>
@@ -88,14 +89,14 @@ function PastWork() {
               </div>
               <div className="md:p-2 p-1 w-1/2">
                 <a
-                  href="https://mitfl.home.blog/"
+                  href="https://dreamedconsultancy.com"
                   rel="noreferrer"
                   target="_blank"
                 >
                   <img
                     alt="gallery"
                     className="w-full object-cover h-full object-center block"
-                    src={mitfl.src}
+                    src={dreamed.src}
                   />
                 </a>
               </div>

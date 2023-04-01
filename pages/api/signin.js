@@ -14,7 +14,7 @@ export default async function handler(req, res) {
           process.env.CRYPTO_SECRET
         );
         const decryptedData = bytes.toString(CryptoJS.enc.Utf8);
-
+console.log(req.body);
         if (user) {
           if (
             req.body.email === user.email &&

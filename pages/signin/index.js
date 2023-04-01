@@ -13,7 +13,9 @@ function Signin() {
   }, []);
   const handleSubmit = async (e) => {
     e.preventDefault();
+    
     const data = { email, password };
+    console.log(data);
     let res = await fetch("/api/signin", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
