@@ -2,31 +2,16 @@ import { useEffect, useState } from "react";
 import Head from "next/head";
 import limitCharacters from "limit-characters";
 import Router from "next/router";
-import Image from "next/image";
 import Link from "next/link";
 import { motion } from "framer-motion";
-function Index() {
-  const [data, setData] = useState([]);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
+function Index({ data = [] }) {
+  const [search, setSearch] = useState("");
+  const [isLoading, setIsLoading] = useState(true);
   useEffect(() => {
-    getData();
-  }, []);
-
-  const getData = async () => {
-    try {
-      const response = await fetch("/api/blog", {
-        method: "GET",
-      });
-      const responseData = await response.json();
-      setData(responseData.data);
-    } catch (err) {
-      setError(err.message);
-    } finally {
-      setLoading(false);
+    if (data.length > 0) {
+      setIsLoading(false);
     }
-  };
+  }, [data]);
   const LoadingSkeleton = () => (
     <div className="animate-pulse">
       <div className="p-2">
@@ -37,19 +22,24 @@ function Index() {
       </div>
     </div>
   );
+  if (isLoading) return <LoadingSkeleton />;
 
-  if (loading) return <LoadingSkeleton />;
-  if (error) return <div>Error: {error}</div>;
+  const filteredData =
+    data &&
+    data.filter((d) => d.title.toLowerCase().includes(search.toLowerCase()));
   return (
     <>
       <Head>
-        <title>Blogs // karthik nishanth.</title>
+        <title>Blogs | Initio Solutions</title>
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
-          content="A personal blog by Karthik Nishanth"
+          content="A collection of insightful blog posts by Initio Solutions"
         />
-        <meta name="keywords" content="blog, personal, karthik, nishanth" />
+        <meta
+          name="keywords"
+          content="blog, initio solutions, insights, technology, business"
+        />
         <meta name="author" content="Initio Solutions" />
       </Head>
       <motion.section
@@ -61,57 +51,82 @@ function Index() {
           <h1 className="text-2xl font-semibold text-gray-700 capitalize lg:text-3x">
             From the blog
           </h1>
-
-          {data?.length !== 0 &&
-            data
+          <input
+            type="text"
+            className="w-full p-2 mt-4 mb-8 text-gray-700 border border-gray-300 rounded"
+            placeholder="Search for blog posts..."
+            value={search}
+            onChange={(e) => setSearch(e.target.value)}
+          />
+          {filteredData?.length !== 0 &&
+            filteredData
               .slice()
               .reverse()
               .map((d) => (
-                <>
-                  <div
-                    style={{ cursor: "pointer" }}
-                    key={d?._id}
-                    onClick={() => Router.push(`/blog/${d?._id}`)}
-                    className="mt-8 lg:-mx-6 lg:flex lg:items-center "
-                  >
-                    <img
-                      width={0}
-                      height={0}
-                      sizes="100vw"
-                      className="object-cover w-full lg:mx-6 lg:w-1/2 rounded-xl h-72 lg:h-96"
-                      src={d?.imageUrl}
-                      alt="cover image"
-                    />
+                <div
+                  style={{ cursor: "pointer" }}
+                  key={d?._id}
+                  onClick={() => Router.push(`/blog/${d?._id}`)}
+                  className="mt-8 lg:-mx-6 lg:flex lg:items-center "
+                >
+                  <img
+                    width={0}
+                    height={0}
+                    sizes="100vw"
+                    className="object-cover w-full lg:mx-6 lg:w-1/2 rounded-xl h-72 lg:h-96"
+                    src={d?.imageUrl}
+                    alt="cover image"
+                  />
 
-                    <div className="mt-6 lg:w-1/2 lg:mt-0 lg:mx-6 ">
-                      <p className="block mt-4 text-2xl font-semibold text-black ">
-                        {d?.title}
-                      </p>
+                  <div className="mt-6 lg:w-1/2 lg:mt-0 lg:mx-6 ">
+                    <p className="block mt-4 text-2xl font-semibold text-black ">
+                      {d?.title}
+                    </p>
 
-                      <p
-                        dangerouslySetInnerHTML={{
-                          __html: limitCharacters({
-                            text: d?.content,
-                            length: 250,
-                          }),
-                        }}
-                        className="mt-3 text-sm prose prose-strong:text-white text-gray-500 md:text-sm"
-                      ></p>
+                    <p
+                      dangerouslySetInnerHTML={{
+                        __html: limitCharacters({
+                          text: d?.content,
+                          length: 250,
+                        }),
+                      }}
+                      className="mt-3 text-sm prose prose-strong:text-white text-gray-500 md:text-sm"
+                    ></p>
 
-                      <a
-                        href="#"
-                        className="inline-block mt-2 text-blue-500 underline hover:text-blue-400"
-                      >
-                        Read more
-                      </a>
-                    </div>
+                    <a
+                      href="#"
+                      className="inline-block mt-2 text-blue-500 underline hover:text-blue-400"
+                    >
+                      Read more
+                    </a>
                   </div>
-                </>
+                </div>
               ))}
         </div>
       </motion.section>
     </>
   );
+}
+export async function getServerSideProps() {
+  try {
+    const response = await fetch(`${process.env.URL}/api/blog`, {
+      method: "GET",
+    });
+    const responseData = await response.json();
+    console.log(responseData);
+    return {
+      props: {
+        data: responseData.data,
+      },
+    };
+  } catch (err) {
+    console.log(err);
+    return {
+      props: {
+        data: [],
+      },
+    };
+  }
 }
 
 export default Index;
