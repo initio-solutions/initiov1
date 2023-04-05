@@ -1,8 +1,9 @@
 import "../styles/globals.css";
 import "../styles/transparentcard.css";
 import Navbar from "../components/navbar";
+import Assistant from "../components/assistant/Assistant";
 import Footer from "../components/footer";
-import ScrolltoTop from "../components/scrolltotop";
+// import ScrolltoTop from "../components/scrolltotop";
 import Script from "next/script";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
@@ -49,8 +50,9 @@ function MyApp({ Component, pageProps }) {
         }}
       />
       <Navbar />
+      <Assistant />
       <Component {...pageProps} />
-      <ScrolltoTop />
+      {/* <ScrolltoTop /> */}
       <Footer />
     </>
   );
