@@ -5,8 +5,9 @@ import { ChatLine, LoadingChatLine } from "./ChatLine";
 import { useCookies } from "react-cookie";
 const COOKIE_NAME = process.env.COOKIE_NAME;
 
-function Box({ messages, setMessages, loading, setLoading }) {
+function Box({ messages, setMessages }) {
   const [input, setInput] = useState("");
+  const [loading, setLoading] = useState(false);
   const [cookie, setCookie] = useCookies([COOKIE_NAME]);
   useEffect(() => {
     if (!cookie[COOKIE_NAME]) {
@@ -14,6 +15,7 @@ function Box({ messages, setMessages, loading, setLoading }) {
       setCookie(COOKIE_NAME, randomId);
     }
   }, [cookie, setCookie]);
+
   const sendMessage = async (message) => {
     const keywords = [
       "Website design",
@@ -89,17 +91,17 @@ function Box({ messages, setMessages, loading, setLoading }) {
         user: cookie[COOKIE_NAME],
       }),
     });
-    console.log(response);
-
+    console.log("Edge function returned.", response);
     const data = await response.text();
-
-    if (!data) {
+    console.log("Response data:", data);
+    if (!data || data.trim() === "") {
+      console.log("Empty response or not updated");
       return;
     }
-
     setMessages([...newMessages, { role: "assistant", content: data }]);
     setLoading(false);
   };
+
   const InputMessage = ({ input, setInput, sendMessage }) => (
     <div className="mt-6 z-20 w-full flex">
       <input

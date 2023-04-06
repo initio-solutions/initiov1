@@ -33,7 +33,7 @@ export function ChatLine({ role = "assistant", content }) {
   if (!content) {
     return null;
   }
-  const formatteMessage = convertNewLines(content);
+  const formattedMessage = convertNewLines(content);
 
   return (
     <div
@@ -54,7 +54,7 @@ export function ChatLine({ role = "assistant", content }) {
                 role == "assistant" ? "font-semibold font-" : "text-gray-400"
               }`}
             >
-              {formatteMessage}
+              {formattedMessage}
             </p>
           </div>
         </div>

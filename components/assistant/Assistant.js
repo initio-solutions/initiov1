@@ -12,7 +12,7 @@ function Assistant() {
 
   const [on, setOn] = useState(false);
   const [messages, setMessages] = useState(initialMessages);
-  const [loading, setLoading] = useState(false);
+
   useEffect(() => {
     const storedMessages = localStorage.getItem("chatMessages");
     if (storedMessages) {
@@ -41,14 +41,7 @@ function Assistant() {
       >
         <BsFillChatLeftQuoteFill />
       </div>
-      {on && (
-        <Box
-          messages={messages}
-          setMessages={setMessages}
-          loading={loading}
-          setLoading={setLoading}
-        />
-      )}
+      {on && <Box messages={messages} setMessages={setMessages} />}
     </>
   );
 }
