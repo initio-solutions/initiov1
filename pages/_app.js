@@ -1,7 +1,7 @@
 import "../styles/globals.css";
 import "../styles/transparentcard.css";
 import Navbar from "../components/navbar";
-import Assistant from "../components/assistant/Assistant";
+// import Assistant from "../components/assistant/Assistant";
 import Footer from "../components/footer";
 // import ScrolltoTop from "../components/scrolltotop";
 import Script from "next/script";
@@ -50,7 +50,7 @@ function MyApp({ Component, pageProps }) {
         }}
       />
       <Navbar />
-      <Assistant />
+      {/* <Assistant /> */}
       <Component {...pageProps} />
       {/* <ScrolltoTop /> */}
       <Footer />
