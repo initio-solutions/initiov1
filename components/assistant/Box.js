@@ -103,7 +103,7 @@ function Box({ messages, setMessages }) {
   };
 
   const InputMessage = ({ input, setInput, sendMessage }) => (
-    <div className="mt-6 z-20 w-full flex">
+    <div className="mt-6 w-full flex">
       <input
         autoFocus
         type="text"
@@ -137,7 +137,7 @@ function Box({ messages, setMessages }) {
     <motion.div
       initial={{ y: 0, opacity: 0 }}
       animate={{ y: -10, opacity: 1 }}
-      className="fixed bg-slate-200 max-w-sm p-4 bottom-20 right-10  flex flex-col"
+      className="fixed bg-slate-200 max-w-sm p-4 bottom-20 right-10 z-20 flex flex-col"
     >
       <div className="flex flex-grow flex-col">
         <div className="overflow-y-auto max-h-72">

@@ -9,7 +9,7 @@ export const config = {
 };
 
 const handler = async (req) => {
-  const body = await req.body;
+  const body = await req.json();
 
   const messages = [
     {
