@@ -34,11 +34,11 @@ function Index({ data = [] }) {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta
           name="description"
-          content="A collection of insightful blog posts by Initio Solutions"
+          content="A collection of insightful blog posts by Initio Solutions on technology, business, and industry trends."
         />
         <meta
           name="keywords"
-          content="blog, initio solutions, insights, technology, business"
+          content="blog, initio solutions, insights, technology, business, industry trends"
         />
         <meta name="author" content="Initio Solutions" />
       </Head>

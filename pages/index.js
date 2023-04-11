@@ -32,6 +32,65 @@ export default function Page() {
           content="web development, app development, technology pioneer, initio solutions"
         />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "WebSite",
+              url: "https://initiosolutions.com",
+              name: "Initio Solutions",
+              potentialAction: {
+                "@type": "SearchAction",
+                target:
+                  "https://initiosolutions.com/search?q={search_term_string}",
+                "query-input": "required name=search_term_string",
+              },
+              mainEntityOfPage: {
+                "@type": "CollectionPage",
+                breadcrumb: {
+                  "@id": "https://initiosolutions.com/#breadcrumb",
+                },
+              },
+              breadcrumb: {
+                "@id": "https://initiosolutions.com/#breadcrumb",
+                "@type": "BreadcrumbList",
+                itemListElement: [
+                  {
+                    "@type": "ListItem",
+                    position: 1,
+                    name: "Home",
+                    item: "https://initiosolutions.com/",
+                  },
+                  {
+                    "@type": "ListItem",
+                    position: 2,
+                    name: "About",
+                    item: "https://initiosolutions.com/about",
+                  },
+                  {
+                    "@type": "ListItem",
+                    position: 3,
+                    name: "Past Work",
+                    item: "https://initiosolutions.com/past-work",
+                  },
+                  {
+                    "@type": "ListItem",
+                    position: 4,
+                    name: "Blog",
+                    item: "https://initiosolutions.com/blog",
+                  },
+                  {
+                    "@type": "ListItem",
+                    position: 5,
+                    name: "Contact",
+                    item: "https://initiosolutions.com/contact",
+                  },
+                ],
+              },
+            }),
+          }}
+        />
       </Head>
       <section className="text-gray-600 body-font">
         <div
