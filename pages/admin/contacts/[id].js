@@ -15,15 +15,6 @@ function Id() {
         });
         const d = await res.json();
         setData(d.data);
-        if (data) {
-          const date = new Date(data.createdAt);
-          const options = {
-            year: "numeric",
-            month: "long",
-            day: "numeric",
-          };
-          setCreate(new Intl.DateTimeFormat("en-US", options).format(date));
-        }
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -31,6 +22,18 @@ function Id() {
 
     fetchData();
   }, []);
+  useEffect(() => {
+    if (data) {
+      const date = new Date(data.createdAt);
+      const options = {
+        year: "numeric",
+        month: "long",
+        day: "numeric",
+      };
+      setCreate(new Intl.DateTimeFormat("en-US", options).format(date));
+    }
+  }, [data]);
+
   return (
     <>
       <Head>

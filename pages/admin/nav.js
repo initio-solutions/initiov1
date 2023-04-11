@@ -9,9 +9,8 @@ import {
   MdContacts,
 } from "react-icons/md";
 function Nav({ variable }) {
-  let query;
   useEffect(() => {
-    query = window.location.pathname;
+    const query = window.location.pathname;
     if (query === "/admin") {
       Router.push("/admin/projects");
     }
