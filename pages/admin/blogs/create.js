@@ -5,6 +5,7 @@ function Create() {
   const [title, setTitle] = useState("");
   const [imageUrl, setImageUrl] = useState("");
   const [content, setContent] = useState("");
+  const [submitStatus, setSubmitStatus] = useState([]);
   const handleSubmit = async (e) => {
     e.preventDefault();
     console.log(content);
@@ -20,6 +21,9 @@ function Create() {
           setTitle("");
           setImageUrl("");
           setContent("");
+          setSubmitStatus([true, "Blog post submitted successfully!"]);
+        } else {
+          setSubmitStatus([false, "Error: Failed to submit blog post."]);
         }
       });
   };
@@ -45,7 +49,15 @@ function Create() {
           placeholder="Image URL"
         />
         <Markdown content={content} setContent={setContent} />
-
+        {submitStatus && (
+          <div
+            className={`text-center ${
+              submitStatus[0] ? "text-green-500" : "text-red-500"
+            } mb-2`}
+          >
+            {submitStatus[1]}
+          </div>
+        )}
         <button
           className="bg-blue-500 p-4 text-white rounded-lg shadow-lg hover:bg-blue-700"
           onClick={handleSubmit}

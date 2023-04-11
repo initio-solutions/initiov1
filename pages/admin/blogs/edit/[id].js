@@ -7,7 +7,7 @@ function Edit() {
   const [imageUrl, setImageUrl] = useState("");
   const [content, setContent] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-
+  const [submitStatus, setSubmitStatus] = useState([]);
   const router = useRouter();
   useEffect(() => {
     const { id } = router.query;
@@ -22,6 +22,7 @@ function Edit() {
               setTitle(d?.data?.title);
               setImageUrl(d?.data?.imageUrl);
               setContent(d?.data?.content);
+              setSubmitStatus([true, "Blog post submitted successfully!"]);
             }
           });
       }
@@ -81,7 +82,15 @@ function Edit() {
           content={content || ""}
           setContent={setContent}
         />
-
+        {submitStatus && (
+          <div
+            className={`text-center ${
+              submitStatus[0] ? "text-green-500" : "text-red-500"
+            } mb-2`}
+          >
+            {submitStatus[1]}
+          </div>
+        )}
         <button
           className="bg-blue-500 p-4 text-white rounded-lg shadow-lg hover:bg-blue-700"
           onClick={handleSubmit}

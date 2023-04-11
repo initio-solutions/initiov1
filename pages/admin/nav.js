@@ -6,6 +6,7 @@ import {
   MdAttachMoney,
   MdDoubleArrow,
   MdBackupTable,
+  MdContacts,
 } from "react-icons/md";
 function Nav({ variable }) {
   let query;
@@ -47,6 +48,21 @@ function Nav({ variable }) {
                 <MdBackupTable className="text-2xl" />
                 <span className="ml-2 text-sm font-medium transition-all ease-out transition-medium">
                   Blogs
+                </span>
+              </button>
+            </li>
+            {variable === "contacts" && (
+              <span className="absolute -z-10 h-10 w-full bg-white rounded-lg shadow ease-out transition-transform transition-medium"></span>
+            )}
+            <li>
+              <button
+                onClick={() => Router.push("/admin/contacts")}
+                type="button"
+                className="py-2 px-3 w-full flex items-center focus:outline-none focus-visible:underline"
+              >
+                <MdContacts className="text-2xl" />
+                <span className="ml-2 text-sm font-medium transition-all ease-out transition-medium">
+                  Contacts
                 </span>
               </button>
             </li>
