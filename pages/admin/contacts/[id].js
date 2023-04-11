@@ -3,34 +3,32 @@ import Head from "next/head";
 function Id() {
   const [data, setData] = useState([]);
   const [create, setCreate] = useState("");
-  const fetchData = async () => {
-    try {
-      let arr = window.location.pathname.split("/");
-      let val = arr.pop();
-      const encodedVal = encodeURIComponent(val);
-      console.log(encodedVal);
-      const res = await fetch(`/api/contact?id=${encodedVal}`, {
-        headers: { "Content-Type": "application/json" },
-      });
-      const d = await res.json();
-      setData(d.data);
-
-      if (data) {
-        console.log(data);
-        const date = new Date(data.createdAt);
-        const options = {
-          year: "numeric",
-          month: "long",
-          day: "numeric",
-        };
-        setCreate(new Intl.DateTimeFormat("en-US", options).format(date));
-      }
-    } catch (error) {
-      console.error("Error fetching data:", error);
-    }
-  };
-
   useEffect(() => {
+    const fetchData = async () => {
+      try {
+        let arr = window.location.pathname.split("/");
+        let val = arr.pop();
+        const encodedVal = encodeURIComponent(val);
+        console.log(encodedVal);
+        const res = await fetch(`/api/contact?id=${encodedVal}`, {
+          headers: { "Content-Type": "application/json" },
+        });
+        const d = await res.json();
+        setData(d.data);
+        if (data) {
+          const date = new Date(data.createdAt);
+          const options = {
+            year: "numeric",
+            month: "long",
+            day: "numeric",
+          };
+          setCreate(new Intl.DateTimeFormat("en-US", options).format(date));
+        }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    };
+
     fetchData();
   }, []);
   return (
