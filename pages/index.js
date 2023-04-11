@@ -22,17 +22,16 @@ export default function Page() {
       transition={{ duration: 0.5 }}
     >
       <Head>
-        <title>Initio Solutions</title>
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <title>Initio Solutions - Web and App Development Services</title>
         <meta
           name="description"
-          content="Initio Solutions - The Technology Pioneer"
+          content="Initio Solutions provides web and app development services that transform new concepts into a driving force for your company. Turn any idea into a reality."
         />
         <meta
           name="keywords"
-          content="web, app, solutions, technology, pioneer, company, idea"
+          content="web development, app development, technology pioneer, initio solutions"
         />
-        <meta name="author" content="Initio Solutions" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
       </Head>
       <section className="text-gray-600 body-font">
         <div
