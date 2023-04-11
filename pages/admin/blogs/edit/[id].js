@@ -8,6 +8,28 @@ function Edit() {
   const [content, setContent] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [submitStatus, setSubmitStatus] = useState([]);
+  const [jsonInput, setJsonInput] = useState("");
+  const [showJsonInput, setShowJsonInput] = useState(false);
+  const handleJsonSubmit = () => {
+    setShowJsonInput(false);
+  };
+  const toggleJsonInput = () => {
+    setShowJsonInput((prevState) => !prevState);
+  };
+
+  const handleJsonInput = (e) => {
+    const input = e.target.value;
+    setJsonInput(input);
+    try {
+      const json = JSON.parse(input);
+      setTitle(json.title || "");
+      setImageUrl(json.imageUrl || "");
+      setContent(json.content || "");
+    } catch (error) {
+      // Handle JSON parsing errors
+      console.error("Invalid JSON input");
+    }
+  };
   const router = useRouter();
   useEffect(() => {
     const { id } = router.query;
@@ -22,7 +44,12 @@ function Edit() {
               setTitle(d?.data?.title);
               setImageUrl(d?.data?.imageUrl);
               setContent(d?.data?.content);
-              setSubmitStatus([true, "Blog post submitted successfully!"]);
+              const jsonData = {
+                title: d?.data?.title,
+                imageUrl: d?.data?.imageUrl,
+                content: d?.data?.content,
+              };
+              setJsonInput(JSON.stringify(jsonData, null, 2));
             }
           });
       }
@@ -40,8 +67,8 @@ function Edit() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify(data),
       }).then((res) => res.json());
-      console.log(res);
       if (res.success) {
+        setSubmitStatus([true, "Blog post submitted successfully!"]);
         router.push(`/admin/blog`);
       } else {
         console.error(res.error);
@@ -91,6 +118,7 @@ function Edit() {
             {submitStatus[1]}
           </div>
         )}
+
         <button
           className="bg-blue-500 p-4 text-white rounded-lg shadow-lg hover:bg-blue-700"
           onClick={handleSubmit}
@@ -98,6 +126,29 @@ function Edit() {
         >
           {isLoading ? "Loading..." : "Submit"}
         </button>
+        <button
+          className="bg-yellow-500 p-4 text-white rounded-lg shadow-lg hover:bg-yellow-700"
+          onClick={toggleJsonInput}
+        >
+          {showJsonInput ? "Hide JSON Editor" : "Show JSON Editor"}
+        </button>
+        {showJsonInput && (
+          <>
+            <label htmlFor="jsonInput">Edit JSON</label>
+            <textarea
+              value={jsonInput}
+              onChange={handleJsonInput}
+              className="block w-full h-48 px-10 py-3 text-gray-700 bg-white border rounded-lg  focus:border-blue-400  focus:ring-blue-300 focus:outline-none focus:ring focus:ring-opacity-40"
+              placeholder='{"title": "Example Title", "imageUrl": "https://example.com/image.jpg", "content": "Example Content"}'
+            />
+            <button
+              className="bg-green-500 p-4 text-white rounded-lg shadow-lg hover:bg-green-700"
+              onClick={handleJsonSubmit}
+            >
+              Submit JSON
+            </button>
+          </>
+        )}
       </div>
     </>
   );
