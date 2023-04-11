@@ -23,6 +23,16 @@ export default function Page() {
     >
       <Head>
         <title>Initio Solutions</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <meta
+          name="description"
+          content="Initio Solutions - The Technology Pioneer"
+        />
+        <meta
+          name="keywords"
+          content="web, app, solutions, technology, pioneer, company, idea"
+        />
+        <meta name="author" content="Initio Solutions" />
       </Head>
       <section className="text-gray-600 body-font">
         <div
