@@ -87,6 +87,12 @@ function Navbar() {
 
           <div className="lg:hidden">
             <button
+              aria-label={
+                breadcrumbMenuOpen
+                  ? "Close breadcrumb menu"
+                  : "Open breadcrumb menu"
+              }
+              aria-expanded={breadcrumbMenuOpen ? "true" : "false"}
               onClick={toggleBreadcrumbMenu}
               className="flex items-center focus:outline-none"
             >

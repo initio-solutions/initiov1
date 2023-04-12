@@ -19,6 +19,7 @@ function Footer() {
             target="_blank"
             href="https://instagram.com/initiosolutions"
             className="ml-3 text-gray-500"
+            aria-label="Visit our Instagram page"
           >
             <FaInstagram className="text-2xl" />
           </Link>
@@ -26,6 +27,7 @@ function Footer() {
             target="_blank"
             href="https://www.linkedin.com/company/initiosolutions/"
             className="ml-3 text-gray-500"
+            aria-label="Visit our LinkedIn page"
           >
             <FaLinkedin className="text-2xl" />
           </Link>

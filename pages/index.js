@@ -282,7 +282,7 @@ export default function Page() {
                   responsive and helpful. Overall, I had a great experience on
                   the website and would definitely recommend it to others.
                 </p>
-                <a className="inline-flex items-center">
+                <p className="inline-flex items-center">
                   <img
                     alt="testimonial"
                     src="https://acaa.org.uk/wp-content/uploads/2021/06/director-message@2x.png"
@@ -296,7 +296,7 @@ export default function Page() {
                       Afghanistan and Central Asian Association
                     </span>
                   </span>
-                </a>
+                </p>
               </div>
             </div>
             <div className="p-4 md:w-1/2 w-full">
@@ -320,7 +320,7 @@ export default function Page() {
                   technique to any business looking to improve their customer
                   relationships and boost their sales.
                 </p>
-                <a className="inline-flex items-center">
+                <p className="inline-flex items-center">
                   <img
                     alt="testimonial"
                     src="https://media-exp1.licdn.com/dms/image/C560BAQE0jrAuedF8TA/company-logo_200_200/0/1642501577232?e=2147483647&v=beta&t=6vdEF5Ibsk7yFYkzyHvCkynVe_7hFOVcWIpkyKiwgGM"
@@ -332,7 +332,7 @@ export default function Page() {
                     </span>
                     <span className="text-gray-500 text-sm">Social beat</span>
                   </span>
-                </a>
+                </p>
               </div>
             </div>
           </div>
@@ -342,7 +342,10 @@ export default function Page() {
       <hr className="ml-10 mr-10" />
       <Pricing />
       <hr className="ml-10 mr-10" />
-      <section className="bg-blue-100 bg-opacity-50 text-gray-600 body-font">
+      <section
+        className="bg-blue-100 bg-opacity-50 text-gray-600 body-font"
+        role="region"
+      >
         <div className="container px-5 py-24 mx-auto">
           <div className="lg:w-2/3 flex flex-col sm:flex-row sm:items-center items-start mx-auto">
             <h2 className="flex-grow sm:pr-16 text-2xl font-medium title-font text-gray-900">
@@ -350,7 +353,10 @@ export default function Page() {
             </h2>
             <button
               onClick={() => route.push("/contact")}
-              className="flex-shrink-0 text-white bg-yellow-400 border-0 py-2 px-8 focus:outline-none hover:bg-yellow-200 rounded text-lg mt-10 sm:mt-0"
+              className="flex-shrink-0 text-gray-800 bg-yellow-500 border-0 py-2 px-8 focus:outline-none hover:bg-yellow-200 rounded text-lg mt-10 sm:mt-0"
+              tabIndex="0"
+              title="Click here to contact us"
+              aria-label="Contact us"
             >
               Contact Us
             </button>
