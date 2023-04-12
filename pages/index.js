@@ -11,6 +11,7 @@ import dataentry from "../assets/dataentry.png";
 import graphic from "../assets/graphic.png";
 import { motion } from "framer-motion";
 import { useRouter } from "next/router";
+import Pricing from "../components/pricing";
 import Link from "next/link";
 // import TransparentCard from "../components/transparentcard";
 export default function Page() {
@@ -92,30 +93,29 @@ export default function Page() {
           }}
         />
       </Head>
-      <section className="text-gray-600 body-font">
-        <div
-          style={{ backgroundColor: "#3581b8" }}
-          className=" mx-auto flex md:flex-row flex-col px-5 py-12 items-center justify-center"
-        >
+      <section className="body-font">
+        <div className="mx-auto flex md:flex-row flex-col px-5 py-12 items-center justify-center bg-gradient-to-r from-blue-600 via-blue-500 to-blue-400">
           <img
             className="lg:w-2/6 md:w-3/6 w-3/6 mb-10 object-cover object-center rounded"
             alt="hero"
             src={hi.src}
           />
           <div className="text-center text-white lg:w-2/3 w-full">
-            <h1 className="sm:text-4xl text-6xl mb-4 font-extrabold">
-              The Technology Pioneer.
-            </h1>
-            <p className="mb-8 leading-relaxed">
-              We are specialists in web and app solutions that aim to transform
-              new concepts into a driving force for your company. With us, you
-              can turn any idea into a reality.
+            <header>
+              <h1 className="sm:text-4xl text-6xl mb-6 font-extrabold font-mono">
+                The Technology Pioneer.
+              </h1>
+            </header>
+            <p className="mb-10 leading-relaxed font-light text-lg">
+              We specialize in web and app solutions designed to transform new
+              concepts into driving forces for your business. With us, you can
+              turn any idea into a reality.
             </p>
-            <div className="flex justify-center">
+            <div className="flex justify-center space-x-4">
               <Link
                 target="_blank"
                 href="https://calendly.com/initiosolutions/30min"
-                className="inline-flex text-white bg-primary border-0 py-2 px-6 focus:outline-none hover:bg-yellow-400 rounded text-lg"
+                className="inline-flex text-white bg-blue-700 border-0 py-2 px-6 focus:outline-none hover:bg-yellow-400 rounded text-lg shadow-md transform hover:scale-110 transition-all duration-300"
               >
                 Book a call
               </Link>
@@ -124,7 +124,7 @@ export default function Page() {
                   e.preventDefault();
                   route.push("/contact");
                 }}
-                className="ml-4 inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg"
+                className="inline-flex text-gray-700 bg-gray-100 border-0 py-2 px-6 focus:outline-none hover:bg-gray-200 rounded text-lg shadow-md"
               >
                 Contact Us
               </button>
@@ -170,174 +170,85 @@ export default function Page() {
         </div>
       </section>
       <hr className="ml-10 mr-10" />
-      <section className="text-gray-600 body-font">
+      <section className="bg-gray-50 text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto">
-          <h1 className="mb-3">Services</h1>
-          <div className="flex flex-wrap -m-4">
-            <motion.div
-              whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
-              style={{ cursor: "pointer" }}
-              onClick={(e) => {
-                e.preventDefault();
-                route.push("/services/website");
-              }}
-              className="lg:w-1/4 md:w-1/2 p-4 w-full"
-            >
-              <a className="block relative h-48 rounded overflow-hidden">
+          <h1 className="text-3xl font-bold mb-12 text-center">Our Services</h1>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            {[
+              {
+                title: "Web Development",
+                image: website.src,
+                description:
+                  "Creating responsive and user-friendly websites tailored to your needs.",
+              },
+              {
+                title: "App Development",
+                image: app.src,
+                description:
+                  "Developing custom mobile and web applications for various platforms.",
+              },
+              {
+                title: "SEO",
+                image: seo.src,
+                description:
+                  "Optimizing your online presence to improve search engine rankings.",
+              },
+              {
+                title: "Social Media Marketing",
+                image: socialmedia.src,
+                description:
+                  "Expanding your brand's reach and engagement through targeted social media campaigns.",
+              },
+              {
+                title: "Content Writing",
+                image: content.src,
+                description:
+                  "Crafting compelling and informative content to attract and retain customers.",
+              },
+              {
+                title: "Cloud and Data",
+                image: data.src,
+                description:
+                  "Leveraging cloud technologies and managing data efficiently to drive business growth.",
+              },
+              {
+                title: "Data Entry",
+                image: dataentry.src,
+                description:
+                  "Providing accurate and efficient data entry services to streamline your operations.",
+              },
+              {
+                title: "Graphic Design",
+                image: graphic.src,
+                description:
+                  "Designing visually appealing graphics to enhance your brand identity.",
+              },
+            ].map((service) => (
+              <motion.div
+                whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
+                className="rounded overflow-hidden shadow-lg cursor-pointer"
+                onClick={(e) => {
+                  e.preventDefault();
+                  route.push(
+                    `/services/${service.title.toLowerCase().replace(" ", "")}`
+                  );
+                }}
+              >
                 <img
-                  alt="ecommerce"
-                  className="object-contain object-center w-full h-full block"
-                  src={website.src}
+                  alt={service.title}
+                  className="w-full h-48 object-contain object-center"
+                  src={service.image}
                 />
-              </a>
-              <div className="mt-4 text-center">
-                {/* <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3> */}
-                <h2 className="text-gray-900 title-font text-lg font-medium">
-                  Web development
-                </h2>
-                {/* <p className="mt-1">$16.00</p> */}
-              </div>
-            </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
-              style={{ cursor: "pointer" }}
-              className="lg:w-1/4 md:w-1/2 p-4 w-full"
-            >
-              <a className="block relative h-48 rounded overflow-hidden">
-                <img
-                  alt="ecommerce"
-                  className="object-contain object-center w-full h-full block"
-                  src={app.src}
-                />
-              </a>
-              <div className="mt-4 text-center">
-                <h2 className="text-gray-900 title-font text-lg font-medium">
-                  App development
-                </h2>
-              </div>
-            </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
-              style={{ cursor: "pointer" }}
-              className="lg:w-1/4 md:w-1/2 p-4 w-full"
-            >
-              <a className="block relative h-48 rounded overflow-hidden">
-                <img
-                  alt="ecommerce"
-                  className="object-contain object-center w-full h-full block"
-                  src={seo.src}
-                />
-              </a>
-              <div className="mt-4">
-                {/* <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3> */}
-                <h2 className="text-gray-900 title-font text-lg font-medium">
-                  SEO
-                </h2>
-              </div>
-            </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
-              style={{ cursor: "pointer" }}
-              className="lg:w-1/4 md:w-1/2 p-4 w-full"
-            >
-              <a className="block relative h-48 rounded overflow-hidden">
-                <img
-                  alt="ecommerce"
-                  className="object-contain object-center w-full h-full block"
-                  src={socialmedia.src}
-                />
-              </a>
-              <div className="mt-4">
-                <h2 className="text-gray-900 title-font text-lg font-medium">
-                  Social media marketing
-                </h2>
-              </div>
-            </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
-              style={{ cursor: "pointer" }}
-              className="lg:w-1/4 md:w-1/2 p-4 w-full"
-            >
-              <a className="block relative h-48 rounded overflow-hidden">
-                <img
-                  alt="ecommerce"
-                  className="object-contain object-center w-full h-full block"
-                  src={content.src}
-                />
-              </a>
-              <div className="mt-4">
-                {/* <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">CATEGORY</h3> */}
-                <h2 className="text-gray-900 title-font text-lg font-medium">
-                  Content writing
-                </h2>
-              </div>
-            </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
-              style={{ cursor: "pointer" }}
-              className="lg:w-1/4 md:w-1/2 p-4 w-full"
-            >
-              <a className="block relative h-48 rounded overflow-hidden">
-                <img
-                  alt="ecommerce"
-                  className="object-contain object-center w-full h-full block"
-                  src={data.src}
-                />
-              </a>
-              <div className="mt-4">
-                {/* <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                  CATEGORY
-                </h3> */}
-                <h2 className="text-gray-900 title-font text-lg font-medium">
-                  Cloud and Data
-                </h2>
-                {/* <p className="mt-1">$21.15</p> */}
-              </div>
-            </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
-              style={{ cursor: "pointer" }}
-              className="lg:w-1/4 md:w-1/2 p-4 w-full"
-            >
-              <a className="block relative h-48 rounded overflow-hidden">
-                <img
-                  alt="ecommerce"
-                  className="object-contain object-center w-full h-full block"
-                  src={dataentry.src}
-                />
-              </a>
-              <div className="mt-4">
-                {/* <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                  CATEGORY
-                </h3> */}
-                <h2 className="text-gray-900 title-font text-lg font-medium">
-                  Data Entry
-                </h2>
-                {/* <p className="mt-1">$12.00</p> */}
-              </div>
-            </motion.div>
-            <motion.div
-              whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
-              style={{ cursor: "pointer" }}
-              className="lg:w-1/4 md:w-1/2 p-4 w-full"
-            >
-              <a className="block relative h-48 rounded overflow-hidden">
-                <img
-                  alt="ecommerce"
-                  className="object-contain object-center w-full h-full block"
-                  src={graphic.src}
-                />
-              </a>
-              <div className="mt-4">
-                {/* <h3 className="text-gray-500 text-xs tracking-widest title-font mb-1">
-                  CATEGORY
-                </h3> */}
-                <h2 className="text-gray-900 title-font text-lg font-medium">
-                  Graphic Design
-                </h2>
-                {/* <p className="mt-1">$18.40</p> */}
-              </div>
-            </motion.div>
+                <div className="px-6 py-4">
+                  <h2 className="text-xl font-semibold mb-2">
+                    {service.title}
+                  </h2>
+                  <p className="text-base text-gray-700">
+                    {service.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
           </div>
         </div>
       </section>
@@ -428,422 +339,7 @@ export default function Page() {
       </section>
 
       <hr className="ml-10 mr-10" />
-      <section className="text-white bg-secondary body-font overflow-hidden">
-        <div className="container px-5 py-24 mx-auto">
-          <div className="flex flex-col text-center w-full mb-20">
-            <h1 className="sm:text-4xl text-3xl font-medium mb-2 text-white">
-              Pricing Tiers
-            </h1>
-            <p className="lg:w-2/3 mx-auto leading-relaxed text-gray-500">
-              Customisable package for your needs.
-            </p>
-            {/* <div className="flex mx-auto border-2 border-yellow-200 rounded overflow-hidden mt-6">
-              <button className="py-1 px-4 bg-primary text-black focus:outline-none">
-                Monthly
-              </button>
-              <button className="py-1 px-4 focus:outline-none">Annually</button>
-            </div> */}
-          </div>
-          <div className="flex flex-wrap -m-4">
-            <div className="p-4 xl:w-1/4 md:w-1/2 w-full ">
-              <div className="h-full p-6 bg-white rounded-lg border-2 border-gray-300 flex flex-col relative overflow-hidden">
-                <h2 className="text-sm text-gray-700 tracking-widest mb-1 font-medium">
-                  STARTER
-                </h2>
-                <h1 className="text-5xl text-gray-900 pb-4 mb-4 border-b border-gray-200 leading-none">
-                  Basic
-                </h1>
-                <p className="flex items-center text-gray-600 mb-2">
-                  <span className="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2.5"
-                      className="w-3 h-3"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M20 6L9 17l-5-5"></path>
-                    </svg>
-                  </span>
-                  Portfolio Site
-                </p>
-                <p className="flex items-center text-gray-600 mb-2">
-                  <span className="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2.5"
-                      className="w-3 h-3"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M20 6L9 17l-5-5"></path>
-                    </svg>
-                  </span>
-                  Contact us and Blog
-                </p>
-                <p className="flex items-center text-gray-600 mb-6">
-                  <span className="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2.5"
-                      className="w-3 h-3"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M20 6L9 17l-5-5"></path>
-                    </svg>
-                  </span>
-                  Affiliate Links and Emails
-                </p>
-                {/* <button className="flex items-center mt-auto text-white bg-gray-400 border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-500 rounded">
-                  Button
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    className="w-4 h-4 ml-auto"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                  </svg>
-                </button> */}
-                {/* <p className="text-xs text-gray-500 mt-3">
-                  Literally you probably haven &apos; t heard of them jean
-                  shorts.
-                </p> */}
-              </div>
-            </div>
-            <div className="p-4 xl:w-1/4 md:w-1/2 w-full">
-              <div className="h-full p-6 rounded-lg border-2 bg-white border-yellow-200 flex flex-col relative overflow-hidden">
-                <span className="bg-primary text-black px-3 py-1 tracking-widest text-xs absolute right-0 top-0 rounded-bl">
-                  POPULAR
-                </span>
-                <h2 className="text-sm tracking-widest text-gray-700 mb-1 font-medium">
-                  ECOMMERCE
-                </h2>
-                <h1 className="text-5xl text-gray-900 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
-                  <span>Pro</span>
-                  {/* <span className="text-lg ml-1 font-normal text-gray-500">
-                    /mo
-                  </span> */}
-                </h1>
-                <p className="flex items-center text-gray-600 mb-2">
-                  <span className="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2.5"
-                      className="w-3 h-3"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M20 6L9 17l-5-5"></path>
-                    </svg>
-                  </span>
-                  Registration and Cart
-                </p>
-                <p className="flex items-center text-gray-600 mb-2">
-                  <span className="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2.5"
-                      className="w-3 h-3"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M20 6L9 17l-5-5"></path>
-                    </svg>
-                  </span>
-                  Tracking and payment gateway
-                </p>
-                <p className="flex items-center text-gray-600 mb-2">
-                  <span className="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2.5"
-                      className="w-3 h-3"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M20 6L9 17l-5-5"></path>
-                    </svg>
-                  </span>
-                  Emails and Customer care
-                </p>
-                <p className="flex items-center text-gray-600 mb-6">
-                  <span className="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2.5"
-                      className="w-3 h-3"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M20 6L9 17l-5-5"></path>
-                    </svg>
-                  </span>
-                  Product data entry
-                </p>
-                {/* <button className="flex items-center mt-auto text-white bg-yellow-200 border-0 py-2 px-4 w-full focus:outline-none hover:bg-indigo-600 rounded">
-                  Button
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    className="w-4 h-4 ml-auto"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                  </svg>
-                </button> */}
-                {/* <p className="text-xs text-gray-500 mt-3">
-                  Literally you probably haven &apos; t heard of them jean
-                  shorts.
-                </p> */}
-              </div>
-            </div>
-            <div className="p-4 xl:w-1/4 md:w-1/2 w-full">
-              <div className="h-full p-6 rounded-lg border-2 bg-white border-gray-300 flex flex-col relative overflow-hidden">
-                <h2 className="text-sm tracking-widest text-gray-700 mb-1 font-medium">
-                  BUSINESS
-                </h2>
-                <h1 className="text-5xl text-gray-900 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
-                  <span>Enterprise</span>
-                  {/* <span className="text-lg ml-1 font-normal text-gray-500">
-                    /mo
-                  </span> */}
-                </h1>
-                <p className="flex items-center text-gray-600 mb-2">
-                  <span className="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2.5"
-                      className="w-3 h-3"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M20 6L9 17l-5-5"></path>
-                    </svg>
-                  </span>
-                  Inhouse tech products
-                </p>
-                <p className="flex items-center text-gray-600 mb-2">
-                  <span className="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2.5"
-                      className="w-3 h-3"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M20 6L9 17l-5-5"></path>
-                    </svg>
-                  </span>
-                  CMS and database integration
-                </p>
-                <p className="flex items-center text-gray-600 mb-2">
-                  <span className="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2.5"
-                      className="w-3 h-3"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M20 6L9 17l-5-5"></path>
-                    </svg>
-                  </span>
-                  Social media marketing and SEO
-                </p>
-                <p className="flex items-center text-gray-600 mb-2">
-                  <span className="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2.5"
-                      className="w-3 h-3"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M20 6L9 17l-5-5"></path>
-                    </svg>
-                  </span>
-                  Data Encryption and Analytics
-                </p>
-                <p className="flex items-center text-gray-600 mb-6">
-                  <span className="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2.5"
-                      className="w-3 h-3"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M20 6L9 17l-5-5"></path>
-                    </svg>
-                  </span>
-                  Adwords and Branding
-                </p>
-                {/* <button className="flex items-center mt-auto text-white bg-gray-400 border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-500 rounded">
-                  Button
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    className="w-4 h-4 ml-auto"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                  </svg>
-                </button> */}
-                {/* <p className="text-xs text-gray-500 mt-3">
-                  Literally you probably haven &apos; t heard of them jean
-                  shorts.
-                </p> */}
-              </div>
-            </div>
-            <div className="p-4 xl:w-1/4 md:w-1/2 w-full">
-              <div className="h-full p-6 bg-white rounded-lg border-2 border-gray-300 flex flex-col relative overflow-hidden">
-                <h2 className="text-sm text-gray-700 tracking-widest mb-1 font-medium">
-                  SPECIAL
-                </h2>
-                <h1 className="text-5xl text-gray-900 leading-none flex items-center pb-4 mb-4 border-b border-gray-200">
-                  <span>Custom</span>
-                  {/* <span className="text-lg ml-1 font-normal text-gray-500">
-                    /mo
-                  </span> */}
-                </h1>
-                <p className="flex items-center text-gray-600 mb-2">
-                  <span className="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2.5"
-                      className="w-3 h-3"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M20 6L9 17l-5-5"></path>
-                    </svg>
-                  </span>
-                  Customised Products
-                </p>
-                <p className="flex items-center text-gray-600 mb-2">
-                  <span className="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2.5"
-                      className="w-3 h-3"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M20 6L9 17l-5-5"></path>
-                    </svg>
-                  </span>
-                  Overall site and app maintanence
-                </p>
-                <p className="flex items-center text-gray-600 mb-2">
-                  <span className="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2.5"
-                      className="w-3 h-3"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M20 6L9 17l-5-5"></path>
-                    </svg>
-                  </span>
-                  24/7 customer care
-                </p>
-                <p className="flex items-center text-gray-600 mb-2">
-                  <span className="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2.5"
-                      className="w-3 h-3"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M20 6L9 17l-5-5"></path>
-                    </svg>
-                  </span>
-                  Mobile app integration
-                </p>
-                <p className="flex items-center text-gray-600 mb-6">
-                  <span className="w-4 h-4 mr-2 inline-flex items-center justify-center bg-gray-400 text-white rounded-full flex-shrink-0">
-                    <svg
-                      fill="none"
-                      stroke="currentColor"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      strokeWidth="2.5"
-                      className="w-3 h-3"
-                      viewBox="0 0 24 24"
-                    >
-                      <path d="M20 6L9 17l-5-5"></path>
-                    </svg>
-                  </span>
-                  Automation and AI integration
-                </p>
-                {/* <button className="flex items-center mt-auto text-white bg-gray-400 border-0 py-2 px-4 w-full focus:outline-none hover:bg-gray-500 rounded">
-                  Button
-                  <svg
-                    fill="none"
-                    stroke="currentColor"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    strokeWidth="2"
-                    className="w-4 h-4 ml-auto"
-                    viewBox="0 0 24 24"
-                  >
-                    <path d="M5 12h14M12 5l7 7-7 7"></path>
-                  </svg>
-                </button> */}
-                {/* <p className="text-xs text-gray-500 mt-3">
-                  Literally you probably haven &apos; t heard of them jean
-                  shorts.
-                </p> */}
-              </div>
-            </div>
-          </div>
-        </div>
-      </section>
+      <Pricing />
       <hr className="ml-10 mr-10" />
       <section className="bg-blue-100 bg-opacity-50 text-gray-600 body-font">
         <div className="container px-5 py-24 mx-auto">

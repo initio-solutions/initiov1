@@ -71,10 +71,14 @@ function Navbar() {
     <>
       <header ref={headerRef} className="text-gray-600 body-font">
         <div className="container mx-auto flex flex-wrap p-1 flex-col md:flex-row items-center">
-          <nav className="hidden lg:flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto">
+          <nav
+            aria-label="Main navigation"
+            className="hidden lg:flex lg:w-2/5 flex-wrap items-center text-base md:ml-auto"
+          >
             {renderMenuItems()}
           </nav>
           <Link
+            aria-label="Home"
             href="/"
             className="flex order-first lg:order-none lg:w-1/5 w-1/2 items-center text-gray-900 lg:items-center lg:justify-center "
           >
@@ -160,6 +164,7 @@ function Navbar() {
       </header>
       {mobileView && (
         <motion.div
+          aria-label="Mobile navigation"
           style={{
             top: headerRef.current?.offsetHeight || "64px",
           }}

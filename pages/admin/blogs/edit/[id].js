@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import Head from "next/head";
 import Markdown from "../../../../components/Markdown";
 import { useRouter } from "next/router";
+
 function Edit() {
   const [title, setTitle] = useState("");
   const [imageUrl, setImageUrl] = useState("");
@@ -16,7 +17,14 @@ function Edit() {
   const toggleJsonInput = () => {
     setShowJsonInput((prevState) => !prevState);
   };
-
+  useEffect(() => {
+    const jsonData = {
+      title,
+      imageUrl,
+      content,
+    };
+    setJsonInput(JSON.stringify(jsonData, null, 2));
+  }, [title, imageUrl, content]);
   const handleJsonInput = (e) => {
     const input = e.target.value;
     setJsonInput(input);
@@ -69,7 +77,7 @@ function Edit() {
       }).then((res) => res.json());
       if (res.success) {
         setSubmitStatus([true, "Blog post submitted successfully!"]);
-        router.push(`/admin/blog`);
+        // router.push(`/admin/blog`);
       } else {
         console.error(res.error);
       }
