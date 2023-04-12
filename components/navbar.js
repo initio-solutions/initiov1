@@ -94,7 +94,7 @@ function Navbar() {
             </button>
           </div>
 
-          <div className="lg:w-2/5 inline-flex items-center lg:justify-end ml-5 lg:ml-0">
+          <div className="lg:w-2/5 inline-flex items-center content-center lg:justify-end ml-5 lg:ml-0">
             {signin && role == 1 ? (
               <>
                 <motion.div
@@ -146,7 +146,10 @@ function Navbar() {
                 </svg>
               </button>
             )}
-            <motion.div whileHover={{ y: -5, transition: { duration: 0.2 } }}>
+            <motion.div
+              className="mt-auto"
+              whileHover={{ y: -5, transition: { duration: 0.2 } }}
+            >
               <Link href="/contact" className="hover:text-gray-900 ml-2">
                 Contact
               </Link>
