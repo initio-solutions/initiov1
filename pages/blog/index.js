@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Head from "next/head";
 import limitCharacters from "limit-characters";
 import Router from "next/router";
-import Link from "next/link";
+import Image from "next/image";
 import { motion } from "framer-motion";
 function Index({ data = [] }) {
   const [search, setSearch] = useState("");
@@ -52,6 +52,7 @@ function Index({ data = [] }) {
             From the blog
           </h1>
           <input
+            alt="cover image"
             type="text"
             className="w-full p-2 mt-4 mb-8 text-gray-700 border border-gray-300 rounded"
             placeholder="Search for blog posts..."
@@ -69,7 +70,7 @@ function Index({ data = [] }) {
                   onClick={() => Router.push(`/blog/${d?._id}`)}
                   className="mt-8 lg:-mx-6 lg:flex lg:items-center "
                 >
-                  <img
+                  <Image
                     width={0}
                     height={0}
                     sizes="100vw"

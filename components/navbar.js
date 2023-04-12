@@ -82,7 +82,7 @@ function Navbar() {
             href="/"
             className="flex order-first lg:order-none lg:w-1/5 w-1/2 items-center text-gray-900 lg:items-center lg:justify-center "
           >
-            <Logo size="15%" />
+            <Logo size="35%" />
           </Link>
 
           <div className="lg:hidden">

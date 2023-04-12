@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 import Head from "next/head";
 import { motion } from "framer-motion";
 function Id({ data }) {
@@ -47,12 +46,11 @@ function Id({ data }) {
       >
         {data && (
           <div className="flex flex-col">
-            <img
-              className="w-full h-40 object-cover"
-              width="0"
-              height="0"
-              sizes="100vw"
+            <Image
+              className="object-cover h-32 w-full"
               alt="headimage"
+              width={400}
+              height={400}
               src={data.imageUrl}
             />
 
