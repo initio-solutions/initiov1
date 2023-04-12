@@ -225,6 +225,7 @@ export default function Page() {
               },
             ].map((service) => (
               <motion.div
+                key={service.title}
                 whileHover={{ scale: 1.05, transition: { duration: 0.2 } }}
                 className="rounded overflow-hidden shadow-lg cursor-pointer"
                 onClick={(e) => {
