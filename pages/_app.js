@@ -3,7 +3,6 @@ import "../styles/transparentcard.css";
 import Navbar from "../components/navbar";
 import Assistant from "../components/assistant/Assistant";
 import Footer from "../components/footer";
-// import ScrolltoTop from "../components/scrolltotop";
 import Script from "next/script";
 import { useEffect } from "react";
 import { useRouter } from "next/router";
@@ -32,12 +31,12 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Script
-        strategy="afterInteractive"
+        strategy="lazyOnload"
         src="https://www.googletagmanager.com/gtag/js?id=G-FDS30ES3BJ"
       ></Script>
       <Script
         id="google-analytics"
-        strategy="afterInteractive"
+        strategy="lazyOnload"
         dangerouslySetInnerHTML={{
           __html: `
      window.dataLayer = window.dataLayer || [];
@@ -52,7 +51,7 @@ function MyApp({ Component, pageProps }) {
       <Navbar />
       <Assistant />
       <Component {...pageProps} />
-      {/* <ScrolltoTop /> */}
+
       <Footer />
     </>
   );

@@ -77,6 +77,7 @@ function Index({ data = [] }) {
                     className="object-cover w-full lg:mx-6 lg:w-1/2 rounded-xl h-72 lg:h-96"
                     src={d?.imageUrl}
                     alt="cover image"
+                    priority={true}
                   />
 
                   <div className="mt-6 lg:w-1/2 lg:mt-0 lg:mx-6 ">
