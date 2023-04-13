@@ -343,17 +343,17 @@ export default function Page() {
       <Pricing />
       <hr className="ml-10 mr-10" />
       <section
-        className="bg-blue-100 bg-opacity-50 text-gray-600 body-font"
+        className="bg-gradient-to-br from-blue-100 to-blue-200 text-gray-600 body-font"
         role="region"
       >
         <div className="container px-5 py-24 mx-auto">
           <div className="lg:w-2/3 flex flex-col sm:flex-row sm:items-center items-start mx-auto">
-            <h2 className="flex-grow sm:pr-16 text-2xl font-medium title-font text-gray-900">
+            <h2 className="flex-grow sm:pr-16 text-3xl font-semibold title-font text-gray-900">
               Get in touch with us to know More!!
             </h2>
             <button
               onClick={() => route.push("/contact")}
-              className="flex-shrink-0 text-gray-800 bg-yellow-500 border-0 py-2 px-8 focus:outline-none hover:bg-yellow-200 rounded text-lg mt-10 sm:mt-0"
+              className="flex-shrink-0 text-white bg-yellow-500 border-0 py-2 px-8 focus:outline-none hover:bg-yellow-600 rounded text-lg mt-10 sm:mt-0 transition duration-150"
               tabIndex="0"
               title="Click here to contact us"
               aria-label="Contact us"
