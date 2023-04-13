@@ -9,7 +9,7 @@
     "start": "next start",
     "lint": "next lint",
     "export": "next export",
-    "sitemap": "next-sitemap",
+    "sitemap": "next-sitemap --config next-sitemap.config.js",
     "postbuild": "npm run sitemap"
   },
   "dependencies": {
