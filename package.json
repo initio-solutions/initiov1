@@ -9,7 +9,8 @@
     "start": "next start",
     "lint": "next lint",
     "export": "next export",
-    "postexport": "next-sitemap"
+    "sitemap": "next-sitemap",
+    "postbuild": "npm run sitemap"
   },
   "dependencies": {
     "@tiptap/extension-color": "^2.0.1",
@@ -20,6 +21,7 @@
     "crypto-js": "^4.1.1",
     "eslint": "8.27.0",
     "eslint-config-next": "^13.2.4",
+    "esm": "^3.2.25",
     "eventsource-parser": "^1.0.0",
     "framer-motion": "^7.6.18",
     "fs": "^0.0.1-security",
