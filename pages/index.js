@@ -1,5 +1,6 @@
 import CountUp from "react-countup";
 import Head from 'next/head';
+import Image from "next/image";
 import hi from "../assets/hi.png";
 import website from "../assets/website.png";
 import app from "../assets/app.png";
@@ -95,10 +96,13 @@ export default function Page() {
       </Head>
       <section className="body-font">
         <div className="mx-auto flex md:flex-row flex-col px-5 py-12 items-center justify-center bg-gradient-to-r from-blue-600 via-blue-500 to-blue-400">
-          <img
+          <Image
             className="lg:w-2/6 md:w-3/6 w-3/6 mb-10 object-cover object-center rounded"
             alt="hero"
+            priority={true}
             src={hi.src}
+            width={500} // Replace with the desired width in pixels
+            height={300} // Replace with the desired height in pixels
           />
           <div className="text-center text-white lg:w-2/3 w-full">
             <header>
@@ -235,10 +239,12 @@ export default function Page() {
                   );
                 }}
               >
-                <img
+                <Image
                   alt={service.title}
                   className="w-full h-48 object-contain object-center"
                   src={service.image}
+                  width={500} // Replace with the desired width in pixels
+                  height={300} // Replace with the desired height in pixels
                 />
                 <div className="px-6 py-4">
                   <h2 className="text-xl font-semibold mb-2">
@@ -283,10 +289,12 @@ export default function Page() {
                   the website and would definitely recommend it to others.
                 </p>
                 <p className="inline-flex items-center">
-                  <img
+                  <Image
                     alt="testimonial"
                     src="https://acaa.org.uk/wp-content/uploads/2021/06/director-message@2x.png"
-                    className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center"
+                    className="rounded-full flex-shrink-0 object-cover object-center"
+                    width={48} // Replace with the desired width in pixels
+                    height={48} // Replace with the desired height in pixels
                   />
                   <span className="flex-grow flex flex-col pl-4">
                     <span className="title-font font-medium text-gray-900">
@@ -321,7 +329,9 @@ export default function Page() {
                   relationships and boost their sales.
                 </p>
                 <p className="inline-flex items-center">
-                  <img
+                  <Image
+                    width={48} // Replace with the desired width in pixels
+                    height={48}
                     alt="testimonial"
                     src="https://media-exp1.licdn.com/dms/image/C560BAQE0jrAuedF8TA/company-logo_200_200/0/1642501577232?e=2147483647&v=beta&t=6vdEF5Ibsk7yFYkzyHvCkynVe_7hFOVcWIpkyKiwgGM"
                     className="w-12 h-12 rounded-full flex-shrink-0 object-cover object-center"
