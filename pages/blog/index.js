@@ -1,12 +1,20 @@
 import { useEffect, useState } from "react";
 import Head from "next/head";
 import limitCharacters from "limit-characters";
-import Router from "next/router";
+import Router, { useRouter } from "next/router";
 import Image from "next/image";
 import { motion } from "framer-motion";
-function Index({ data = [] }) {
+function Index({ data = [], totalPages }) {
   const [search, setSearch] = useState("");
   const [isLoading, setIsLoading] = useState(true);
+  const router = useRouter();
+  const { page } = router.query;
+
+  const currentPage = parseInt(page || 1, 10);
+
+  const handlePageChange = (newPage) => {
+    router.push(`/blog?page=${newPage}`);
+  };
   useEffect(() => {
     if (data.length > 0) {
       setIsLoading(false);
@@ -23,10 +31,31 @@ function Index({ data = [] }) {
     </div>
   );
   if (isLoading) return <LoadingSkeleton />;
-
+  const Pagination = () => (
+    <div className="mt-6 flex items-center justify-center">
+      <button
+        className="px-3 py-1 bg-blue-500 text-white rounded"
+        onClick={() => handlePageChange(currentPage - 1)}
+        disabled={currentPage === 1}
+      >
+        Previous
+      </button>
+      <span className="mx-4">{currentPage}</span>
+      <button
+        className="px-3 py-1 bg-blue-500 text-white rounded"
+        onClick={() => handlePageChange(currentPage + 1)}
+        disabled={currentPage >= totalPages}
+      >
+        Next
+      </button>
+    </div>
+  );
   const filteredData =
     data &&
-    data.filter((d) => d.title.toLowerCase().includes(search.toLowerCase()));
+    data
+      .filter((d) => d.title.toLowerCase().includes(search.toLowerCase()))
+      .sort((a, b) => new Date(b.createdAt) - new Date(a.createdAt));
+
   return (
     <>
       <Head>
@@ -105,20 +134,34 @@ function Index({ data = [] }) {
                 </div>
               ))}
         </div>
+        <Pagination />
       </motion.section>
     </>
   );
 }
-export async function getServerSideProps() {
+export async function getServerSideProps(context) {
+  const { page } = context.query;
   try {
-    const response = await fetch(`${process.env.URL}/api/blog`, {
-      method: "GET",
-    });
+    const response = await fetch(
+      `${process.env.URL}/api/blog?page=${page || 1}`,
+      {
+        method: "GET",
+      }
+    );
+
+    if (!response.ok) {
+      console.error(
+        `Error fetching data: ${response.status} ${response.statusText}`
+      );
+      return { props: { data: [] } };
+    }
+
     const responseData = await response.json();
-    console.log(responseData);
+
     return {
       props: {
         data: responseData.data,
+        totalPages: responseData.pagination.totalPages,
       },
     };
   } catch (err) {
@@ -126,6 +169,7 @@ export async function getServerSideProps() {
     return {
       props: {
         data: [],
+        totalPages: 0,
       },
     };
   }

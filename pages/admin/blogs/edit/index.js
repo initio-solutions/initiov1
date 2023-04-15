@@ -6,6 +6,11 @@ import Link from "next/link";
 function Index() {
   const [data, setData] = useState([]);
   const [showModal, setshowModal] = useState(false);
+  const [deleteId, setDeleteId] = useState(null);
+  const handleDeleteClick = (id) => {
+    setDeleteId(id);
+    setshowModal(true);
+  };
   const options = {
     wordwrap: 10,
     limits: {
@@ -27,16 +32,19 @@ function Index() {
       .then((res) => res.json())
       .then((d) => setData(d.data));
   };
-  const deleteData = async (id) => {
-    await fetch(`/api/blogs`, {
+  const deleteData = async () => {
+    console.log(deleteId);
+    await fetch(`/api/blog?id=${deleteId}`, {
       method: "DELETE",
-      body: JSON.stringify({ id }),
     })
       .then((res) => res.json())
-      .then((d) => console.log(d));
+      .then((d) => {
+        console.log(d);
+        getData();
+      });
     setshowModal(false);
   };
-  const Modal = ({ id }) => {
+  const Modal = () => {
     return (
       <div
         className="relative z-10"
@@ -65,9 +73,8 @@ function Index() {
               </div>
               <div className="bg-gray-50 px-4 py-3 sm:flex sm:flex-row-reverse sm:px-6">
                 <button
-                  type="button"
-                  onClick={() => deleteData(id)}
-                  className="inline-flex w-full justify-center rounded-md bg-red-600 px-3 py-2 text-sm font-semibold text-white shadow-sm hover:bg-red-800 sm:ml-3 sm:w-auto"
+                  onClick={deleteData}
+                  className="text-red-500 transition-colors duration-200 hover:text-indigo-500 focus:outline-none"
                 >
                   Delete
                 </button>
@@ -151,7 +158,7 @@ function Index() {
                         <tr key={d._id}>
                           <td className="px-4 py-4 text-sm font-medium text-gray-700  whitespace-nowrap">
                             <div className="inline-flex items-center gap-x-3">
-                              {showModal && <Modal id={d?._id} />}
+                              {showModal && <Modal />}
                               {d?.title}
                             </div>
                           </td>

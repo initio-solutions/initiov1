@@ -34,12 +34,15 @@ export default async function handler(req, res) {
         const limit = parseInt(req.query.limit, 10) || 10;
         const startIndex = (page - 1) * limit;
         const total = await Blog.countDocuments();
-
-        const blogs = await Blog.find().skip(startIndex).limit(limit);
+    
+        const blogs = await Blog.find()
+          .sort({ createdAt: -1 })
+          .skip(startIndex)
+          .limit(limit); // Add sorting here
 
         const totalPages = Math.ceil(total / limit);
         const pagination = { page, limit, totalPages, total };
-
+    
         return res.status(200).json({ success: true, data: blogs, pagination });
       } catch (error) {
         return res.status(400).json({ success: false, message: error.message });
@@ -75,7 +78,7 @@ export default async function handler(req, res) {
         const blog = await Blog.findByIdAndUpdate(req.body.id, req.body, {
           new: true,
         });
-        console.log(blog);
+
         if (!blog) {
           return res
             .status(404)
@@ -87,12 +90,13 @@ export default async function handler(req, res) {
       }
     case "DELETE":
       try {
-        if (!req.body.id) {
+        const { id } = req.query;
+        if (!id) {
           return res
             .status(400)
             .json({ success: false, message: "Missing blog ID" });
         }
-        const blog = await Blog.findOneAndDelete({ _id: req.body.id });
+        const blog = await Blog.findOneAndDelete({ _id: id });
         if (!blog) {
           return res
             .status(404)
